@@ -16,22 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YW-yb-7gn">
-                                <rect key="frame" x="176" y="196" width="63" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htr-Pg-mDH">
+                                <rect key="frame" x="177" y="248" width="61" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Button 1"/>
+                                <state key="normal" title="Balance"/>
                                 <connections>
-                                    <action selector="ButtonVersionCheck:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PpI-rV-5W7"/>
+                                    <action selector="balanceOf:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cVy-H2-U98"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="730-TY-HIN">
-                                <rect key="frame" x="128" y="351" width="159" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIb-p3-kco">
+                                <rect key="frame" x="176" y="432" width="64" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Client Version Check"/>
+                                <state key="normal" title="Transfer"/>
                                 <connections>
-                                    <action selector="ButtonTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Bh-xT-hV7"/>
+                                    <action selector="transferTo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuF-Ym-PPi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -39,7 +39,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Web3 Testing" id="3pI-wK-Y40">
-                        <barButtonItem key="rightBarButtonItem" title="version" id="znq-LY-RWq">
+                        <barButtonItem key="leftBarButtonItem" title="version" id="znq-LY-RWq">
                             <connections>
                                 <action selector="ButtonVersionCheck:" destination="BYZ-38-t0r" id="hBB-Jr-xCn"/>
                             </connections>
