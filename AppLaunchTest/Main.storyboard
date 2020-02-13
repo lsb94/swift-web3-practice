@@ -46,6 +46,7 @@
                                             <state key="normal" backgroundImage="arrowshape.turn.up.right" catalog="system"/>
                                             <connections>
                                                 <action selector="buttonTransfer:" destination="1Nn-up-oyu" eventType="touchUpInside" id="9U9-es-OQc"/>
+                                                <segue destination="zpu-tT-YXi" kind="show" id="FNW-YJ-dpH"/>
                                             </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZON-40-ofB">
@@ -122,6 +123,133 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZ8-sF-pBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="755.07246376811599" y="95.758928571428569"/>
+        </scene>
+        <!--Token Transfer-->
+        <scene sceneID="rp1-As-DVz">
+            <objects>
+                <viewController id="zpu-tT-YXi" customClass="TransferViewController" customModule="AppLaunchTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eCy-nY-0op">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Token Symbol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sn8-f2-osO">
+                                <rect key="frame" x="20" y="140" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CFP-U7-ajH">
+                                <rect key="frame" x="20" y="169" width="374" height="34"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Token Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0x-kP-rMI">
+                                <rect key="frame" x="20" y="211" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fk6-yu-Dks">
+                                <rect key="frame" x="20" y="240" width="374" height="34"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To (wallet address)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GN-WK-UAk">
+                                <rect key="frame" x="20" y="353" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YjP-pp-FDk">
+                                <rect key="frame" x="20" y="382" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyU-61-ISe">
+                                <rect key="frame" x="20" y="424" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3B-h0-X8W">
+                                <rect key="frame" x="20" y="453" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTN-W1-nTW">
+                                <rect key="frame" x="20" y="282" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVp-V2-gcZ">
+                                <rect key="frame" x="20" y="311" width="374" height="34"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="sn8-f2-osO" secondAttribute="trailing" constant="20" id="2nK-4G-AXz"/>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="H0x-kP-rMI" secondAttribute="trailing" constant="20" id="3mI-Ho-RYu"/>
+                            <constraint firstItem="H0x-kP-rMI" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="6C6-Qg-8e1"/>
+                            <constraint firstItem="sn8-f2-osO" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="7Ag-xm-qyG"/>
+                            <constraint firstItem="H0x-kP-rMI" firstAttribute="top" secondItem="CFP-U7-ajH" secondAttribute="bottom" constant="8" id="8Ds-w5-FX7"/>
+                            <constraint firstItem="d3B-h0-X8W" firstAttribute="top" secondItem="dyU-61-ISe" secondAttribute="bottom" constant="8" id="8fY-K6-HqF"/>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="GVp-V2-gcZ" secondAttribute="trailing" constant="20" id="DBb-hv-mVL"/>
+                            <constraint firstItem="YjP-pp-FDk" firstAttribute="top" secondItem="5GN-WK-UAk" secondAttribute="bottom" constant="8" id="DkS-H5-ijp"/>
+                            <constraint firstItem="5GN-WK-UAk" firstAttribute="top" secondItem="GVp-V2-gcZ" secondAttribute="bottom" constant="8" id="G3a-fj-bOi"/>
+                            <constraint firstItem="CFP-U7-ajH" firstAttribute="top" secondItem="sn8-f2-osO" secondAttribute="bottom" constant="8" id="IIF-RO-BhX"/>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="CFP-U7-ajH" secondAttribute="trailing" constant="20" id="Ipx-Rq-Rqy"/>
+                            <constraint firstItem="GVp-V2-gcZ" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="JSu-Q6-9Ae"/>
+                            <constraint firstItem="CFP-U7-ajH" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="Lvn-n9-BuZ"/>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="d3B-h0-X8W" secondAttribute="trailing" constant="20" id="McT-df-vR5"/>
+                            <constraint firstItem="dyU-61-ISe" firstAttribute="top" secondItem="YjP-pp-FDk" secondAttribute="bottom" constant="8" id="QhX-W3-ycm"/>
+                            <constraint firstItem="5GN-WK-UAk" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="Syq-KS-5GM"/>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="dyU-61-ISe" secondAttribute="trailing" constant="20" id="WGl-DU-q7G"/>
+                            <constraint firstItem="GVp-V2-gcZ" firstAttribute="top" secondItem="UTN-W1-nTW" secondAttribute="bottom" constant="8" id="ZNn-MR-5kR"/>
+                            <constraint firstItem="Fk6-yu-Dks" firstAttribute="top" secondItem="H0x-kP-rMI" secondAttribute="bottom" constant="8" id="a7R-La-Ywt"/>
+                            <constraint firstItem="sn8-f2-osO" firstAttribute="top" secondItem="qbG-D9-DZD" secondAttribute="top" constant="52" id="ciZ-mu-p1j"/>
+                            <constraint firstItem="Fk6-yu-Dks" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="foU-97-9bf"/>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="5GN-WK-UAk" secondAttribute="trailing" constant="20" id="hIZ-wm-vJA"/>
+                            <constraint firstItem="UTN-W1-nTW" firstAttribute="top" secondItem="Fk6-yu-Dks" secondAttribute="bottom" constant="8" id="ka7-qS-nGL"/>
+                            <constraint firstItem="UTN-W1-nTW" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="nQG-Go-ESZ"/>
+                            <constraint firstItem="YjP-pp-FDk" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="oIR-Ru-hjP"/>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="Fk6-yu-Dks" secondAttribute="trailing" constant="20" id="p2G-go-dkO"/>
+                            <constraint firstItem="dyU-61-ISe" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="qBe-tS-hO6"/>
+                            <constraint firstItem="d3B-h0-X8W" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="tXm-Ob-7FI"/>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="UTN-W1-nTW" secondAttribute="trailing" constant="20" id="v1i-Av-Yog"/>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="YjP-pp-FDk" secondAttribute="trailing" constant="20" id="xim-a4-ogR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qbG-D9-DZD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Token Transfer" largeTitleDisplayMode="never" id="P5v-yc-rs7">
+                        <barButtonItem key="rightBarButtonItem" title="SEND" id="Vgl-7t-im8">
+                            <connections>
+                                <action selector="buttonSend:" destination="zpu-tT-YXi" id="yfZ-pf-BQ6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textAddressTo" destination="YjP-pp-FDk" id="fFX-60-JCl"/>
+                        <outlet property="textAmount" destination="d3B-h0-X8W" id="NDL-fq-uPX"/>
+                        <outlet property="textBalance" destination="GVp-V2-gcZ" id="f0Z-Wa-Vbn"/>
+                        <outlet property="textContract" destination="Fk6-yu-Dks" id="pSt-qr-iLN"/>
+                        <outlet property="textSymbol" destination="CFP-U7-ajH" id="G18-4n-cSB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LOK-2c-h4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657.9710144927537" y="498.88392857142856"/>
         </scene>
         <!--New Token-->
         <scene sceneID="roi-Kr-tPC">

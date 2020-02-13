@@ -77,6 +77,8 @@ class TokenTableViewController: UITableViewController {
         
     }
     
+    // web3 inintialize
+    
     let web3 = Web3(rpcURL: "https://ropsten.infura.io/v3/45d946bade934f1a8d099e0d219884e6")
     
 

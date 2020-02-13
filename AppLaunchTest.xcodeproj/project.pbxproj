@@ -23,6 +23,7 @@
 		ECB3CCC223F4E3DD0055BEA3 /* MyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CCC123F4E3DD0055BEA3 /* MyCustomTableViewCell.swift */; };
 		ECB3CCC423F5361C0055BEA3 /* NewTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CCC323F5361C0055BEA3 /* NewTokenViewController.swift */; };
 		ECB3CCC623F5376A0055BEA3 /* wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CCC523F5376A0055BEA3 /* wallet.swift */; };
+		ECB3CCC823F54F170055BEA3 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CCC723F54F170055BEA3 /* TransferViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		ECB3CCC123F4E3DD0055BEA3 /* MyCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomTableViewCell.swift; sourceTree = "<group>"; };
 		ECB3CCC323F5361C0055BEA3 /* NewTokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTokenViewController.swift; sourceTree = "<group>"; };
 		ECB3CCC523F5376A0055BEA3 /* wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallet.swift; sourceTree = "<group>"; };
+		ECB3CCC723F54F170055BEA3 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				ECB3CC2823F267750055BEA3 /* ContractERC20.swift */,
 				ECB3CCC123F4E3DD0055BEA3 /* MyCustomTableViewCell.swift */,
 				ECB3CCC323F5361C0055BEA3 /* NewTokenViewController.swift */,
+				ECB3CCC723F54F170055BEA3 /* TransferViewController.swift */,
 			);
 			path = AppLaunchTest;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				EC7BE44823F22EFE00DEB9E8 /* AppDelegate.swift in Sources */,
 				EC7BE45223F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld in Sources */,
 				ECB3CCC423F5361C0055BEA3 /* NewTokenViewController.swift in Sources */,
+				ECB3CCC823F54F170055BEA3 /* TransferViewController.swift in Sources */,
 				ECB3CCC223F4E3DD0055BEA3 /* MyCustomTableViewCell.swift in Sources */,
 				EC7BE44A23F22EFE00DEB9E8 /* SceneDelegate.swift in Sources */,
 				ECB3CC2923F267750055BEA3 /* ContractERC20.swift in Sources */,
