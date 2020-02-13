@@ -11,24 +11,8 @@ import Web3
 
 class TokenTableViewController: UITableViewController {
 
-    //navigate bar button
+    //navigate bar
     
-    //cell
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    
-    let web3 = Web3(rpcURL: "https://ropsten.infura.io/v3/45d946bade934f1a8d099e0d219884e6")
-    
-
-  
     @IBAction func buttonVersionCheck(_ sender: Any) {
         var versionInfo: String = ""
             
@@ -56,6 +40,47 @@ class TokenTableViewController: UITableViewController {
     @IBAction func buttonAddToken(_ sender: Any) {
         
     }
+    
+    
+    
+    //cell
+    
+    @IBAction func buttonCheckBalance(_ sender: Any) {
+        
+        let erc20 = ContractERC20(web3: web3, contractAddress: "0x583cbBb8a8443B38aBcC0c956beCe47340ea1367")
+        let message = erc20.getBalanceOf(walletAddress: "0xE724113C268d23fcBD8fbdAE5cD9EC2946B6C5cb")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+            let balance = erc20.getBalance()
+            self.alert(title: "balance", message: balance)
+            Token.dummyTokenList[0].balance = balance // index of tokenlist is fixed, need to be flexible.
+            self.tableView.reloadData() // As-Is: whole table view is reloading, To-Be: only the cell will be reloaded(see below)
+            //            self.tableView.reloadRows(at: 0, with: .none) // index path 0 does not work.
+        }
+    }
+    
+    
+    @IBAction func buttonTransfer(_ sender: Any) {
+    }
+    
+    
+    //scene control
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+    }
+    
+    let web3 = Web3(rpcURL: "https://ropsten.infura.io/v3/45d946bade934f1a8d099e0d219884e6")
+    
+
+  
     
     
     
