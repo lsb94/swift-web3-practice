@@ -53,13 +53,12 @@ class TokenTableViewController: UITableViewController {
                 }
     }
     
-    @IBAction func buttonBalanceOf(_ sender: Any) {
-        
+    @IBAction func buttonAddToken(_ sender: Any) {
         
     }
     
-    @IBAction func buttonTransfeTo(_ sender: Any) {
-    }
+    
+    
     
 
     // MARK: - Table view data source
@@ -72,12 +71,15 @@ class TokenTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellToken", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellToken", for: indexPath) as! MyCustomTableViewCell
 
         // Configure the cell...
         let target = Token.dummyTokenList[indexPath.row]
-        cell.textLabel?.text = target.balance
-        cell.detailTextLabel?.text = target.symbol
+        
+        cell.labelBalance?.text = target.balance
+        cell.labelSymbol?.text = target.symbol
+//        cell.textLabel?.text = target.balance
+//        cell.detailTextLabel?.text = target.symbol
 
         return cell
     }
