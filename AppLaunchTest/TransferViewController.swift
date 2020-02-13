@@ -39,6 +39,10 @@ class TransferViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let token = Token.dummyTokenList[0] // As-Is: fixed token info, To-Be: get pathIndex from button to flexible info
+        textSymbol.text = token.symbol
+        textContract.text = token.address
+        textBalance.text = token.balance
     }
     
     // web3 inintialize

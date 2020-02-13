@@ -32,7 +32,7 @@ class TokenTableViewController: UITableViewController {
                 }
                 
         //        alert(title: "Version Info", message: v)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     self.alert(title: "Version Info", message: versionInfo)
                 }
     }
@@ -51,7 +51,7 @@ class TokenTableViewController: UITableViewController {
         let message = erc20.getBalanceOf(walletAddress: "0xE724113C268d23fcBD8fbdAE5cD9EC2946B6C5cb")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             let balance = erc20.getBalance()
-            self.alert(title: "balance", message: balance)
+//            self.alert(title: "balance", message: balance)
             Token.dummyTokenList[0].balance = balance // index of tokenlist is fixed, need to be flexible.
             self.tableView.reloadData() // As-Is: whole table view is reloading, To-Be: only the cell will be reloaded(see below)
             //            self.tableView.reloadRows(at: 0, with: .none) // index path 0 does not work.
