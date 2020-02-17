@@ -9,5 +9,6 @@ target 'AppLaunchTest' do
   pod 'Web3'
   pod 'Web3/PromiseKit'
   pod 'Web3/ContractABI'
+  pod 'Keystore'
 
 end

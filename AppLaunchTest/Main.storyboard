@@ -16,9 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rWU-TC-a55">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellToken" rowHeight="126" id="lmJ-8X-oob" customClass="MyCustomTableViewCell" customModule="AppLaunchTest" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="126"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="126"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lmJ-8X-oob" id="qhv-s2-zoN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="126"/>
@@ -106,7 +113,7 @@
                             <outlet property="delegate" destination="1Nn-up-oyu" id="9DF-ve-bLn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="TvV-NK-o1h">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="TvV-NK-o1h">
                         <barButtonItem key="leftBarButtonItem" title="Version" id="Mh3-yN-S7I">
                             <connections>
                                 <action selector="buttonVersionCheck:" destination="1Nn-up-oyu" id="bSr-tn-gMV"/>
@@ -119,6 +126,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="labelTitle" destination="rWU-TC-a55" id="XMQ-B9-M4U"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZ8-sF-pBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

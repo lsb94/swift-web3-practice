@@ -8,14 +8,17 @@
 
 import UIKit
 import Web3
+import Keystore
+
 
 class TokenTableViewController: UITableViewController {
 
     //navigate bar
+    @IBOutlet weak var labelTitle: UILabel!
     
     @IBAction func buttonVersionCheck(_ sender: Any) {
         var versionInfo: String = ""
-            
+        
                 firstly {
                     web3.net.version()
                 }.done {version in
@@ -35,6 +38,7 @@ class TokenTableViewController: UITableViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     self.alert(title: "Version Info", message: versionInfo)
                 }
+ 
     }
     
     @IBAction func buttonAddToken(_ sender: Any) {
@@ -49,6 +53,7 @@ class TokenTableViewController: UITableViewController {
         
         let erc20 = ContractERC20(web3: web3, contractAddress: "0x583cbBb8a8443B38aBcC0c956beCe47340ea1367")
         let message = erc20.getBalanceOf(walletAddress: "0xE724113C268d23fcBD8fbdAE5cD9EC2946B6C5cb")
+//        let message = erc20.getBalanceOf(walletAddress: "") //여기에 이제 만든 어드레스 정보넣어야
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             let balance = erc20.getBalance()
 //            self.alert(title: "balance", message: balance)
@@ -67,24 +72,33 @@ class TokenTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        let firstLaunch = FirstLaunch()
+//        if firstLaunch.isFirstLaunch{
+        if false {
+            print("This is FIRST LAUNCH")
+            let keySet = try! EthereumPrivateKey.init()
+            let privateKey: [UInt8] = keySet.rawPrivateKey
+            print(privateKey)
+            let password = "1q2w3e"
+            let keystore = try! Keystore(privateKey: privateKey, password: password)
+            let keystoreJson = try! JSONEncoder().encode(keystore)
+            UserDefaults.standard.set(keystoreJson, forKey: "keyJson")
+//            print("\(UserDefaults.standard.value(forKey: "keyJson"))")
+        }
+        let decoder = JSONDecoder()
+        let keystoreData: Data = UserDefaults.standard.value(forKey: "keyJson") as! Data // Load keystore data from file?
+        let keystore = try! decoder.decode(Keystore.self, from: keystoreData)
+        let password = "1q2w3e"
+        let privateKey = try! keystore.privateKey(password: password)
+        print(privateKey)
+        labelTitle.text = "0x" + keystore.address
         
     }
     
     // web3 inintialize
     
     let web3 = Web3(rpcURL: "https://ropsten.infura.io/v3/45d946bade934f1a8d099e0d219884e6")
-    
-
-  
-    
-    
     
     
 
