@@ -13,7 +13,7 @@ class ContractERC20 {
     var _web3: Web3
     var _contractAddress: EthereumAddress
     var _contract: GenericERC20Contract
-    var _balance: String = "2"
+    var _balance: String = "Response delayed: try again"
     
     init (web3: Web3, contractAddress: String) {
         self._web3 = web3

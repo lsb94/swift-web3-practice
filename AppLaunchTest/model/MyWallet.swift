@@ -12,7 +12,7 @@ class MyWallet {
     var address: Any
     
     init(){
-        self.address = UserDefaults.standard.value(forKey: "keyJson")
+        self.address = UserDefaults.standard.value(forKey: "address")
         
     }
 }
