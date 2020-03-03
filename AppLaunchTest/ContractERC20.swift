@@ -13,13 +13,13 @@ class ContractERC20 {
     var _web3: Web3
     var _contractAddress: EthereumAddress
     var _contract: GenericERC20Contract
-    var _balance: String = "Response delayed: try again"
+    var _balance: String = "Response delayed"
     
     init (web3: Web3, contractAddress: String) {
         self._web3 = web3
-        self._contractAddress = try! EthereumAddress(hex: contractAddress, eip55: true)
+        self._contractAddress = try! EthereumAddress(hex: contractAddress, eip55: false)
         self._contract = web3.eth.Contract(type: GenericERC20Contract.self, address: self._contractAddress)
-//        self._balance = "3"
+        //        self._balance = "3"
     }
     
     func getBalance() -> String{
@@ -30,9 +30,9 @@ class ContractERC20 {
     }
     
     func getBalanceOf(walletAddress: String) {
-    // Get balance of some address
+        // Get balance of some address
         firstly {
-            try self._contract.balanceOf(address: EthereumAddress(hex: walletAddress, eip55: true)).call()
+            try self._contract.balanceOf(address: EthereumAddress(hex: walletAddress, eip55: false)).call()
         }.done { outputs in
             print(outputs["_balance"] as? BigUInt)
             self._balance = String(outputs["_balance"] as! BigUInt)
@@ -40,8 +40,8 @@ class ContractERC20 {
             print(error)
         }
     }
-
-
+    
+    
     func sendTokenTo(address: String, amount: BigUInt) {
         // Send some tokens to another address (locally signing the transaction)
         let myPrivateKey = try! EthereumPrivateKey(hexPrivateKey: "...")

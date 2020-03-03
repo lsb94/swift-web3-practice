@@ -9,10 +9,10 @@
 import Foundation
 
 class MyWallet {
-    var address: Any
+    public var address: String
     
     init(){
-        self.address = UserDefaults.standard.value(forKey: "address")
-        
+        self.address = UserDefaults.standard.value(forKey: "address") as! String
     }
+    static let myWallet = MyWallet()
 }

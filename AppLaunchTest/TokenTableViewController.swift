@@ -45,18 +45,16 @@ class TokenTableViewController: UITableViewController {
         
     }
     
-    
-    
     //cell
     
     @IBAction func buttonCheckBalance(_ sender: Any) {
         
-        let erc20 = ContractERC20(web3: web3, contractAddress: "0x583cbBb8a8443B38aBcC0c956beCe47340ea1367") // token address is fixed
-        let message = erc20.getBalanceOf(walletAddress: "0xE724113C268d23fcBD8fbdAE5cD9EC2946B6C5cb")
-//        let message = erc20.getBalanceOf(walletAddress: "") //여기에 이제 만든 어드레스 정보넣어야
+//        let erc20 = ContractERC20(web3: web3, contractAddress: )
+        let erc20 = ContractERC20(web3: web3, contractAddress: "0xc84f8b669ccb91c86ab2b38060362b9956f2de52")
+//        let message = erc20.getBalanceOf(walletAddress: "0xe72eeec0def1b07a8822241e6c512a755898f9ae")
+        let message = erc20.getBalanceOf(walletAddress: MyWallet.myWallet.address as! String ) //여기에 이제 만든 월렛 어드레스 정보넣어야
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             let balance = erc20.getBalance()
-//            self.alert(title: "balance", message: balance)
             Token.dummyTokenList[0].balance = balance // index of tokenlist is fixed, need to be flexible.
             self.tableView.reloadData() // As-Is: whole table view is reloading, To-Be: only the cell will be reloaded(see below)
             //            self.tableView.reloadRows(at: 0, with: .none) // index path 0 does not work.
@@ -91,7 +89,9 @@ class TokenTableViewController: UITableViewController {
 //        let keystore = try! decoder.decode(Keystore.self, from: keystoreData)
 //        let password = "1q2w3e"
 //        let privateKey = try! keystore.privateKey(password: password)
-        labelTitle.text = "0x" + "\(UserDefaults.standard.value(forKey: "address")!)"
+//        labelTitle.text = "0x" + "\(UserDefaults.standard.value(forKey: "address")!)"
+        labelTitle.text = "0x\(MyWallet.myWallet.address)"
+        print("\(UserDefaults.standard.value(forKey: "address")!)")
         
     }
     

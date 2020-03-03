@@ -20,5 +20,100 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEE44D9E-3FD6-4ADC-BD07-68DE6543A5C3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getBalanceOf(walletAddress:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BEE44D9E-3FD6-4ADC-BD07-68DE6543A5C3 - b7cf66404781031f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppLaunchTest.ContractERC20.getBalanceOf(walletAddress: Swift.String) -&gt; ()"
+                  moduleName = "AppLaunchTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davelee/Desktop/xcode/AppLaunchTest/AppLaunchTest/ContractERC20.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "279">
+               </Location>
+               <Location
+                  uuid = "BEE44D9E-3FD6-4ADC-BD07-68DE6543A5C3 - 187597d1673d2d6d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () throws -&gt; PromiseKit.Promise&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt; in AppLaunchTest.ContractERC20.getBalanceOf(walletAddress: Swift.String) -&gt; ()"
+                  moduleName = "AppLaunchTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davelee/Desktop/xcode/AppLaunchTest/AppLaunchTest/ContractERC20.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "414">
+               </Location>
+               <Location
+                  uuid = "BEE44D9E-3FD6-4ADC-BD07-68DE6543A5C3 - 127d9b1438e1ef93"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in AppLaunchTest.ContractERC20.getBalanceOf(walletAddress: Swift.String) -&gt; ()"
+                  moduleName = "AppLaunchTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davelee/Desktop/xcode/AppLaunchTest/AppLaunchTest/ContractERC20.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "126">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "220D1412-3B98-48E2-8D63-448F2560316F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "getBalanceOf(walletAddress:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "840858FF-B854-4620-AA88-608D61E64799"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getBalanceOf(walletAddress:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
