@@ -32,7 +32,7 @@ class NewTokenViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        textMyAddress.text = wallet.dummyWalletList[0].address
+        textMyAddress.text = MyWallet.init().address
     }
     
 

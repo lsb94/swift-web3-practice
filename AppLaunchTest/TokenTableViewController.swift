@@ -80,12 +80,13 @@ class TokenTableViewController: UITableViewController {
             let password = "1q2w3e"
             let keystore = try! Keystore(privateKey: privateKey, password: password)
             let keystoreJson = try! JSONEncoder().encode(keystore)
-            UserDefaults.standard.set(keystoreJson, forKey: "keyJson") //private key store
-            UserDefaults.standard.set(keystore.address, forKey: "address")
+            UserDefaults.standard.set(keystoreJson, forKey: "keyJson") //private key store as json
+            let addressEip = try! EthereumAddress(hex: keystore.address, eip55: false).hex(eip55: true)
+            UserDefaults.standard.set(addressEip, forKey: "address") //eip55 address store as string
         }
         let address = MyWallet.init().address
         print(address)
-        labelWallet.text = "0x\(address)"
+        labelWallet.text = "\(address)"
         do {
             let etherAddress = try EthereumAddress.init(hex: address, eip55: false)
                 web3.eth.getBalance(address: etherAddress, block: .latest) { response in

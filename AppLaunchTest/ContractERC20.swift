@@ -55,7 +55,7 @@ class ContractERC20 {
                 try self._contract.transfer(to: EthereumAddress(hex: address, eip55: true), value: amount).createTransaction(
                     nonce: nonce,
 //                    from: myPrivateKey.address,
-                    from: EthereumAddress(hex: "0x615B5400d1C03E03Ac5528A69d598d3eDE897367", eip55: true),
+                    from: EthereumAddress(hex: MyWallet.init().address, eip55: true),
                     value: 0,
                     gas: 53995,
                     gasPrice: EthereumQuantity(quantity: 8.gwei)
