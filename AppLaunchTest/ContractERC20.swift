@@ -8,6 +8,7 @@
 
 import UIKit
 import Web3
+import Keystore
 
 class ContractERC20 {
     var _web3: Web3
@@ -17,7 +18,8 @@ class ContractERC20 {
     
     init (web3: Web3, contractAddress: String) {
         self._web3 = web3
-        self._contractAddress = try! EthereumAddress(hex: contractAddress, eip55: false)
+        print(contractAddress)
+        self._contractAddress = try! EthereumAddress(hex: contractAddress, eip55: true)
         self._contract = web3.eth.Contract(type: GenericERC20Contract.self, address: self._contractAddress)
         //        self._balance = "3"
     }
@@ -44,23 +46,30 @@ class ContractERC20 {
     
     func sendTokenTo(address: String, amount: BigUInt) {
         // Send some tokens to another address (locally signing the transaction)
-        let myPrivateKey = try! EthereumPrivateKey(hexPrivateKey: "...")
-        firstly {
-            self._web3.eth.getTransactionCount(address: myPrivateKey.address, block: .latest)
-        }.then { nonce in
-            try self._contract.transfer(to: EthereumAddress(hex: address, eip55: true), value: amount).createTransaction(
-                nonce: nonce,
-                from: myPrivateKey.address,
-                value: 0,
-                gas: 100000,
-                gasPrice: EthereumQuantity(quantity: 21.gwei)
-                )!.sign(with: myPrivateKey).promise
-        }.then { tx in
-            self._web3.eth.sendRawTransaction(transaction: tx)
-        }.done { txHash in
-            print(txHash)
-        }.catch { error in
-            print(error)
-        }
+        let keyStoreJson = UserDefaults.standard.value(forKey: "keyJson") as! Data
+        do{
+            let keyStore =  try JSONDecoder.init().decode(Keystore.self, from: keyStoreJson)
+            let myPrivateKey = try! EthereumPrivateKey(hexPrivateKey: keyStore.privateKey(password: "1q2w3e").toHexString())
+            firstly {
+                self._web3.eth.getTransactionCount(address: myPrivateKey.address, block: .latest)
+//                self._web3.eth.getTransactionCount(address: myPrivateKey.address, block: .latest)
+            }.then { nonce in
+                try self._contract.transfer(to: EthereumAddress(hex: address, eip55: true), value: amount).createTransaction(
+                    nonce: nonce,
+//                    from: myPrivateKey.address,
+                    from: EthereumAddress(hex: "0x615B5400d1C03E03Ac5528A69d598d3eDE897367", eip55: true),
+                    value: 0,
+                    gas: 53995,
+                    gasPrice: EthereumQuantity(quantity: 8.gwei)
+                    )!.sign(with: myPrivateKey).promise
+            }.then { tx in
+                self._web3.eth.sendRawTransaction(transaction: tx)
+            }.done { txHash in
+                print(txHash)
+            }.catch { error in
+                print(error)
+            }
+        } catch {print("wrong!")}
     }
 }
+

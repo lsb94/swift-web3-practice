@@ -18,23 +18,27 @@ class TransferViewController: UIViewController {
     @IBOutlet weak var textAddressTo: UITextField!
     @IBOutlet weak var textAmount: UITextField!
     
-    
-    
     //navigate bar
-    
     @IBAction func buttonSend(_ sender: Any) {
-        textBalance.text = "0"
-        guard try!(Int(textBalance.text!)!) > 0 else {
-            alert(title: "Develope Not done", message: "The function is not implemented yet.")
+        guard let balance = textBalance.text else { return print("balance empty") }
+        guard let amount = textAmount.text else { return print("amount empty") }
+        guard let tokenAddress = textContract.text else { return print("contract address empty") }
+        guard let sendTo = textAddressTo.text else { return print("wallet address empty") }
+        guard let balanceNum = BigUInt(balance),
+            let amountNum = BigUInt(amount)
+            else { return print("bigUint fail") }
+        if balanceNum > amountNum {
+            print("send button act")
+            let token = ContractERC20(web3: web3, contractAddress: tokenAddress)
+            token.sendTokenTo(address: sendTo, amount: amountNum)
+        } else {
+            alert(title: "잔액 부족", message: "잔액이 부족합니다.")
             return
         }
-        let token = ContractERC20(web3: web3, contractAddress: textContract.text!)
-        token.sendTokenTo(address: textAddressTo.text!, amount: try!(BigUInt(textAmount.text!)))
+        self.navigationController?.popViewController(animated: true)
     }
     
-    
     //scene control
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,18 +50,5 @@ class TransferViewController: UIViewController {
     }
     
     // web3 inintialize
-    
     let web3 = Web3(rpcURL: "https://ropsten.infura.io/v3/45d946bade934f1a8d099e0d219884e6")
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
