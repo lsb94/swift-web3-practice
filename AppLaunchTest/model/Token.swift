@@ -21,6 +21,13 @@ class Token {
     
     static var dummyTokenList = [
         Token(balance: "unknown", symbol: "ZEENUS", address: "0xC84f8B669Ccb91C86AB2b38060362b9956f2De52"),
-        Token(balance: "123,456.789098", symbol: "ETH", address: "0xdummy")
+        Token(balance: "1", symbol: "2", address: "3"),
+        Token(balance: "1", symbol: "2", address: "3"),
+        Token(balance: "1", symbol: "2", address: "3"),
+        Token(balance: "1", symbol: "2", address: "3"),
+        Token(balance: "1", symbol: "2", address: "3"),
+        Token(balance: "1", symbol: "2", address: "3"),
+        Token(balance: "1", symbol: "2", address: "3"),
+        Token(balance: "1", symbol: "2", address: "3")
     ]
 }

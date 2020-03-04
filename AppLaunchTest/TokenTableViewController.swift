@@ -14,7 +14,8 @@ import Keystore
 class TokenTableViewController: UITableViewController {
 
     //navigate bar
-    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelWallet: UILabel!
+    @IBOutlet weak var labelEth: UILabel!
     
     @IBAction func buttonVersionCheck(_ sender: Any) {
         var versionInfo: String = ""
@@ -49,11 +50,9 @@ class TokenTableViewController: UITableViewController {
     
     @IBAction func buttonCheckBalance(_ sender: Any) {
         
-//        let erc20 = ContractERC20(web3: web3, contractAddress: )
         let erc20 = ContractERC20(web3: web3, contractAddress: Token.dummyTokenList[0].address)
-//        let message = erc20.getBalanceOf(walletAddress: "0xe72eeec0def1b07a8822241e6c512a755898f9ae")
-        let message = erc20.getBalanceOf(walletAddress: MyWallet.myWallet.address as! String ) //여기에 이제 만든 월렛 어드레스 정보넣어야
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+        let message = erc20.getBalanceOf(walletAddress: MyWallet.init().address) //여기에 이제 만든 월렛 어드레스 정보넣어야
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3){
             let balance = erc20.getBalance()
             Token.dummyTokenList[0].balance = balance // index of tokenlist is fixed, need to be flexible.
             self.tableView.reloadData() // As-Is: whole table view is reloading, To-Be: only the cell will be reloaded(see below)
@@ -84,13 +83,24 @@ class TokenTableViewController: UITableViewController {
             UserDefaults.standard.set(keystoreJson, forKey: "keyJson") //private key store
             UserDefaults.standard.set(keystore.address, forKey: "address")
         }
-        labelTitle.text = "0x\(MyWallet.myWallet.address)"
-        print("\(UserDefaults.standard.value(forKey: "address")!)")
-        
+        let address = MyWallet.init().address
+        print(address)
+        labelWallet.text = "0x\(address)"
+        do {
+            let etherAddress = try EthereumAddress.init(hex: address, eip55: false)
+                web3.eth.getBalance(address: etherAddress, block: .latest) { response in
+                    let balance = response.result?.quantity.gwei
+                    let ethereum = Double(balance!) / pow(10, 27)
+                    print(String(format: "%.9f", ethereum))
+                    
+                    DispatchQueue.main.async {
+                        self.labelEth.text = String(format: "%.9f", ethereum)
+                    }
+                }
+        } catch {print(error)}
     }
     
     // web3 inintialize
-    
     let web3 = Web3(rpcURL: "https://ropsten.infura.io/v3/45d946bade934f1a8d099e0d219884e6")
     
     

@@ -14,5 +14,4 @@ class MyWallet {
     init(){
         self.address = UserDefaults.standard.value(forKey: "address") as! String
     }
-    static let myWallet = MyWallet()
 }

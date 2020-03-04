@@ -16,13 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rWU-TC-a55">
+                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" axis="vertical" id="RGz-I2-73a">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJP-FN-lyZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="9ZP-YY-Xi9"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checking ETH Balance..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zC0-x3-zK7">
+                                    <rect key="frame" x="0.0" y="30" width="414" height="14"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="CJP-FN-lyZ" firstAttribute="trailing" secondItem="RGz-I2-73a" secondAttribute="trailingMargin" id="DPe-he-Tdu"/>
+                                <constraint firstItem="CJP-FN-lyZ" firstAttribute="top" secondItem="RGz-I2-73a" secondAttribute="topMargin" id="mPw-dK-ze3"/>
+                                <constraint firstItem="CJP-FN-lyZ" firstAttribute="leading" secondItem="RGz-I2-73a" secondAttribute="leadingMargin" id="yzG-cm-bCD"/>
+                            </constraints>
+                        </stackView>
                         <prototypes>
                             <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellToken" rowHeight="126" id="lmJ-8X-oob" customClass="MyCustomTableViewCell" customModule="AppLaunchTest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="126"/>
@@ -127,7 +147,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="labelTitle" destination="rWU-TC-a55" id="XMQ-B9-M4U"/>
+                        <outlet property="labelEth" destination="zC0-x3-zK7" id="oi3-9d-veD"/>
+                        <outlet property="labelWallet" destination="CJP-FN-lyZ" id="PNH-gC-cJe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZ8-sF-pBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

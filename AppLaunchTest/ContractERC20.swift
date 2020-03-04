@@ -18,10 +18,8 @@ class ContractERC20 {
     
     init (web3: Web3, contractAddress: String) {
         self._web3 = web3
-        print(contractAddress)
         self._contractAddress = try! EthereumAddress(hex: contractAddress, eip55: true)
         self._contract = web3.eth.Contract(type: GenericERC20Contract.self, address: self._contractAddress)
-        //        self._balance = "3"
     }
     
     func getBalance() -> String{
