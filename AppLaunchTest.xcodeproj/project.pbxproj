@@ -13,6 +13,7 @@
 		EC7BE45223F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC7BE45023F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld */; };
 		EC7BE45423F22EFE00DEB9E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7BE45323F22EFE00DEB9E8 /* Assets.xcassets */; };
 		EC7BE45723F22EFE00DEB9E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7BE45523F22EFE00DEB9E8 /* LaunchScreen.storyboard */; };
+		EC892D992410F6AB0031E7C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892D982410F6AB0031E7C1 /* DataManager.swift */; };
 		ECB3CC2523F235150055BEA3 /* UIViewControl+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2423F235150055BEA3 /* UIViewControl+Alert.swift */; };
 		ECB3CC2723F264160055BEA3 /* ERC20Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2623F264160055BEA3 /* ERC20Standard.swift */; };
 		ECB3CC2923F267750055BEA3 /* ContractERC20.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2823F267750055BEA3 /* ContractERC20.swift */; };
@@ -39,6 +40,7 @@
 		EC7BE45323F22EFE00DEB9E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC7BE45623F22EFE00DEB9E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC7BE45823F22EFE00DEB9E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC892D982410F6AB0031E7C1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ECB3CC2423F235150055BEA3 /* UIViewControl+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControl+Alert.swift"; sourceTree = "<group>"; };
 		ECB3CC2623F264160055BEA3 /* ERC20Standard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERC20Standard.swift; sourceTree = "<group>"; };
 		ECB3CC2823F267750055BEA3 /* ContractERC20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractERC20.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		EC7BE43B23F22EFE00DEB9E8 = {
 			isa = PBXGroup;
 			children = (
+				EC892D972410F6870031E7C1 /* Data */,
 				EC7BE44623F22EFE00DEB9E8 /* AppLaunchTest */,
 				EC7BE44523F22EFE00DEB9E8 /* Products */,
 				B686F4EAD9E03A23DDC4FAA1 /* Pods */,
@@ -123,6 +126,14 @@
 				ECFB523023FA7D5500FBEE82 /* FirstLaunch.swift */,
 			);
 			path = AppLaunchTest;
+			sourceTree = "<group>";
+		};
+		EC892D972410F6870031E7C1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EC892D982410F6AB0031E7C1 /* DataManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		ECB3CC7923F390900055BEA3 /* model */ = {
@@ -253,6 +264,7 @@
 				ECB3CC2523F235150055BEA3 /* UIViewControl+Alert.swift in Sources */,
 				ECB3CC2D23F2C3050055BEA3 /* TokenTableViewController.swift in Sources */,
 				ECFB523123FA7D5500FBEE82 /* FirstLaunch.swift in Sources */,
+				EC892D992410F6AB0031E7C1 /* DataManager.swift in Sources */,
 				ECB3CC2723F264160055BEA3 /* ERC20Standard.swift in Sources */,
 				EC7BE44823F22EFE00DEB9E8 /* AppDelegate.swift in Sources */,
 				EC7BE45223F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld in Sources */,
