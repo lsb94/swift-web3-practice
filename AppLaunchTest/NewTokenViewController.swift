@@ -21,7 +21,7 @@ class NewTokenViewController: UIViewController {
         let addressMy = textMyAddress.text
         let addressToken = textTokenAddress.text
         
-        Token.dummyTokenList.append(Token(balance: "0", symbol: "XYZ", address: addressToken!))
+        TokenDummy.dummyTokenList.append(TokenDummy(balance: "0", symbol: "XYZ", address: addressToken!))
         dismiss(animated: true, completion: nil)
         
     }

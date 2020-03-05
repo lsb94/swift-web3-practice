@@ -20,7 +20,7 @@
 		ECB3CC2B23F2C0140055BEA3 /* TokenTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB3CC2A23F2C0140055BEA3 /* TokenTableView.storyboard */; };
 		ECB3CC2D23F2C3050055BEA3 /* TokenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2C23F2C3050055BEA3 /* TokenTableViewController.swift */; };
 		ECB3CC7823F38C640055BEA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB3CC7723F38C640055BEA3 /* Main.storyboard */; };
-		ECB3CC7D23F392780055BEA3 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC7C23F392780055BEA3 /* Token.swift */; };
+		ECB3CC7D23F392780055BEA3 /* TokenDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC7C23F392780055BEA3 /* TokenDummy.swift */; };
 		ECB3CCC223F4E3DD0055BEA3 /* MyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CCC123F4E3DD0055BEA3 /* MyCustomTableViewCell.swift */; };
 		ECB3CCC423F5361C0055BEA3 /* NewTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CCC323F5361C0055BEA3 /* NewTokenViewController.swift */; };
 		ECB3CCC823F54F170055BEA3 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CCC723F54F170055BEA3 /* TransferViewController.swift */; };
@@ -47,7 +47,7 @@
 		ECB3CC2A23F2C0140055BEA3 /* TokenTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TokenTableView.storyboard; sourceTree = "<group>"; };
 		ECB3CC2C23F2C3050055BEA3 /* TokenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTableViewController.swift; sourceTree = "<group>"; };
 		ECB3CC7723F38C640055BEA3 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		ECB3CC7C23F392780055BEA3 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		ECB3CC7C23F392780055BEA3 /* TokenDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDummy.swift; sourceTree = "<group>"; };
 		ECB3CCC123F4E3DD0055BEA3 /* MyCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomTableViewCell.swift; sourceTree = "<group>"; };
 		ECB3CCC323F5361C0055BEA3 /* NewTokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTokenViewController.swift; sourceTree = "<group>"; };
 		ECB3CCC723F54F170055BEA3 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		ECB3CC7923F390900055BEA3 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				ECB3CC7C23F392780055BEA3 /* Token.swift */,
+				ECB3CC7C23F392780055BEA3 /* TokenDummy.swift */,
 				ECFB523223FA7FF800FBEE82 /* MyWallet.swift */,
 			);
 			path = model;
@@ -274,7 +274,7 @@
 				EC7BE44A23F22EFE00DEB9E8 /* SceneDelegate.swift in Sources */,
 				ECFB523323FA7FF800FBEE82 /* MyWallet.swift in Sources */,
 				ECB3CC2923F267750055BEA3 /* ContractERC20.swift in Sources */,
-				ECB3CC7D23F392780055BEA3 /* Token.swift in Sources */,
+				ECB3CC7D23F392780055BEA3 /* TokenDummy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

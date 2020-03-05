@@ -50,11 +50,11 @@ class TokenTableViewController: UITableViewController {
     
     @IBAction func buttonCheckBalance(_ sender: Any) {
         
-        let erc20 = ContractERC20(web3: web3, contractAddress: Token.dummyTokenList[0].address)
+        let erc20 = ContractERC20(web3: web3, contractAddress: TokenDummy.dummyTokenList[0].addressDummy)
         let message = erc20.getBalanceOf(walletAddress: MyWallet.init().address) //여기에 이제 만든 월렛 어드레스 정보넣어야
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.3){
             let balance = erc20.getBalance()
-            Token.dummyTokenList[0].balance = balance // index of tokenlist is fixed, need to be flexible.
+            TokenDummy.dummyTokenList[0].balanceDummy = balance // index of tokenlist is fixed, need to be flexible.
             self.tableView.reloadData() // As-Is: whole table view is reloading, To-Be: only the cell will be reloaded(see below)
             //            self.tableView.reloadRows(at: 0, with: .none) // index path 0 does not work.
         }
@@ -111,7 +111,7 @@ class TokenTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Token.dummyTokenList.count
+        return TokenDummy.dummyTokenList.count
     }
 
     
@@ -119,10 +119,10 @@ class TokenTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellToken", for: indexPath) as! MyCustomTableViewCell
 
         // Configure the cell...
-        let target = Token.dummyTokenList[indexPath.row]
+        let target = TokenDummy.dummyTokenList[indexPath.row]
         
-        cell.labelBalance?.text = target.balance
-        cell.labelSymbol?.text = target.symbol
+        cell.labelBalance?.text = target.balanceDummy
+        cell.labelSymbol?.text = target.symbolDummy
 //        cell.textLabel?.text = target.balance
 //        cell.detailTextLabel?.text = target.symbol
 

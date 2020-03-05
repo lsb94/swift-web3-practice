@@ -22,12 +22,12 @@ class DataManager {
     var walletList = [Wallet]()
     
     func fetchWallet() {
-        let request: NSFetchRequest<Wallet> = Wallet.fetchRequest()
+        let requestWallet: NSFetchRequest<Wallet> = Wallet.fetchRequest()
         let sortByOrder = NSSortDescriptor(key: "order", ascending: true)
-        request.sortDescriptors = [sortByOrder]
+        requestWallet.sortDescriptors = [sortByOrder]
         
         do {
-            walletList = try mainContext.fetch(request)
+            walletList = try mainContext.fetch(requestWallet)
         }catch {
             print(error)
         }
@@ -40,6 +40,30 @@ class DataManager {
         saveContext()
     }
     
+    var tokenList = [Token]()
+    
+    func fetchToken() {
+        let requestToken: NSFetchRequest<Token> = Token.fetchRequest()
+        let sortByBalance = NSSortDescriptor(key: "balance", ascending: false)
+        requestToken.sortDescriptors = [sortByBalance]
+
+        do {
+            tokenList = try mainContext.fetch(requestToken)
+        }catch {
+            print(error)
+        }
+    }
+
+    func addNewToken (addressEIP: String, symbol: String, decimal: Decimal, Balance: String) {
+        let newToken = Token(context: mainContext)
+        newToken.address = addressEIP
+        newToken.symbol = symbol
+        newToken.decimal = decimal as NSDecimalNumber
+        newToken.balance = Balance
+        saveContext()
+    }
+
+    
     lazy var persistentContainer: NSPersistentContainer = {
            let container = NSPersistentContainer(name: "AppLaunchTest")
            container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -49,7 +73,8 @@ class DataManager {
            })
            return container
        }()
-
+    
+    
        // MARK: - Core Data Saving support
 
        func saveContext () {
