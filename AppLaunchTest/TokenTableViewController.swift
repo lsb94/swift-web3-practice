@@ -11,8 +11,16 @@ import Web3
 import Keystore
 
 
+@available(iOS 11.0, *)
 class TokenTableViewController: UITableViewController {
 
+    @IBAction func buttonBioTest(_ sender: Any) {
+        MyBioAuthentication.shared.myBio { (result, error) in
+            print("뷰 컨트롤러: \(result)")
+            let errorText = error ?? ""
+            print(errorText)
+        }
+    }
     //navigate bar
     @IBOutlet weak var labelWallet: UILabel!
     @IBOutlet weak var labelEth: UILabel!
@@ -76,7 +84,7 @@ class TokenTableViewController: UITableViewController {
             print("This is FIRST LAUNCH")
             let keySet = try! EthereumPrivateKey.init()
             let privateKey = keySet.rawPrivateKey
-            print(privateKey)
+            print(privateKey.toHexString())
             let password = "1q2w3e"
             let keystore = try! Keystore(privateKey: privateKey, password: password)
             let keystoreJson = try! JSONEncoder().encode(keystore)
@@ -90,13 +98,20 @@ class TokenTableViewController: UITableViewController {
         do {
             let etherAddress = try EthereumAddress.init(hex: address, eip55: false)
                 web3.eth.getBalance(address: etherAddress, block: .latest) { response in
-                    let balance = response.result?.quantity.gwei
-                    let ethereum = Double(balance!) / pow(10, 27)
-                    print(String(format: "%.9f", ethereum))
-                    
+                    let balance = response.result?.quantity
+//                    let balanceETH = response.result?.quantity.eth
+//                    let balanceRaw = response.result?.quantity
+//                    print(balanceRaw)
+                    print(balance)
+//                    print(balanceETH)
+                    let ethereum = Double(balance!) / pow(10, 18)
                     DispatchQueue.main.async {
-                        self.labelEth.text = String(format: "%.9f", ethereum)
+                        self.labelEth.text = String(ethereum)
                     }
+                    
+//                    DispatchQueue.main.async {
+//                        self.labelEth.text = String(format: "%.9f", ethereum)
+//                    }
                 }
         } catch {print(error)}
     }
@@ -123,8 +138,6 @@ class TokenTableViewController: UITableViewController {
         
         cell.labelBalance?.text = target.balanceDummy
         cell.labelSymbol?.text = target.symbolDummy
-//        cell.textLabel?.text = target.balance
-//        cell.detailTextLabel?.text = target.symbol
 
         return cell
     }

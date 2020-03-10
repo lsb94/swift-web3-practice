@@ -63,7 +63,7 @@ class ContractERC20 {
             }.then { tx in
                 self._web3.eth.sendRawTransaction(transaction: tx)
             }.done { txHash in
-                print(txHash)
+                print(txHash.hex())
             }.catch { error in
                 print(error)
             }

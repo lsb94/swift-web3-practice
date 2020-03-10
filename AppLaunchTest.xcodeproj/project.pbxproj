@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E24688E67AA553E2B6C7CD56 /* Pods_AppLaunchTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354E6FEDC17398E16771A3A4 /* Pods_AppLaunchTest.framework */; };
+		EC10127524172D8B00ED0EC5 /* MySecureEnclave.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC10127424172D8B00ED0EC5 /* MySecureEnclave.swift */; };
+		EC10127724172DDE00ED0EC5 /* MyBioAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC10127624172DDE00ED0EC5 /* MyBioAuthentication.swift */; };
+		EC10127924172E0700ED0EC5 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC10127824172E0700ED0EC5 /* LocalAuthentication.framework */; };
 		EC7BE44823F22EFE00DEB9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BE44723F22EFE00DEB9E8 /* AppDelegate.swift */; };
 		EC7BE44A23F22EFE00DEB9E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BE44923F22EFE00DEB9E8 /* SceneDelegate.swift */; };
 		EC7BE45223F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC7BE45023F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld */; };
@@ -32,6 +35,9 @@
 		1C412C7922436ADC62EE1362 /* Pods-AppLaunchTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppLaunchTest.release.xcconfig"; path = "Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest.release.xcconfig"; sourceTree = "<group>"; };
 		354E6FEDC17398E16771A3A4 /* Pods_AppLaunchTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppLaunchTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBDB84EA88B748B4E031C81 /* Pods-AppLaunchTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppLaunchTest.debug.xcconfig"; path = "Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest.debug.xcconfig"; sourceTree = "<group>"; };
+		EC10127424172D8B00ED0EC5 /* MySecureEnclave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySecureEnclave.swift; sourceTree = "<group>"; };
+		EC10127624172DDE00ED0EC5 /* MyBioAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBioAuthentication.swift; sourceTree = "<group>"; };
+		EC10127824172E0700ED0EC5 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		EC7BE44423F22EFE00DEB9E8 /* AppLaunchTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppLaunchTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7BE44723F22EFE00DEB9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC7BE44923F22EFE00DEB9E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC10127924172E0700ED0EC5 /* LocalAuthentication.framework in Frameworks */,
 				E24688E67AA553E2B6C7CD56 /* Pods_AppLaunchTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +77,7 @@
 		613752BA31F2D48A8D5D3A22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC10127824172E0700ED0EC5 /* LocalAuthentication.framework */,
 				354E6FEDC17398E16771A3A4 /* Pods_AppLaunchTest.framework */,
 			);
 			name = Frameworks;
@@ -124,6 +132,8 @@
 				ECB3CCC323F5361C0055BEA3 /* NewTokenViewController.swift */,
 				ECB3CCC723F54F170055BEA3 /* TransferViewController.swift */,
 				ECFB523023FA7D5500FBEE82 /* FirstLaunch.swift */,
+				EC10127424172D8B00ED0EC5 /* MySecureEnclave.swift */,
+				EC10127624172DDE00ED0EC5 /* MyBioAuthentication.swift */,
 			);
 			path = AppLaunchTest;
 			sourceTree = "<group>";
@@ -265,6 +275,7 @@
 				ECB3CC2D23F2C3050055BEA3 /* TokenTableViewController.swift in Sources */,
 				ECFB523123FA7D5500FBEE82 /* FirstLaunch.swift in Sources */,
 				EC892D992410F6AB0031E7C1 /* DataManager.swift in Sources */,
+				EC10127724172DDE00ED0EC5 /* MyBioAuthentication.swift in Sources */,
 				ECB3CC2723F264160055BEA3 /* ERC20Standard.swift in Sources */,
 				EC7BE44823F22EFE00DEB9E8 /* AppDelegate.swift in Sources */,
 				EC7BE45223F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld in Sources */,
@@ -274,6 +285,7 @@
 				EC7BE44A23F22EFE00DEB9E8 /* SceneDelegate.swift in Sources */,
 				ECFB523323FA7FF800FBEE82 /* MyWallet.swift in Sources */,
 				ECB3CC2923F267750055BEA3 /* ContractERC20.swift in Sources */,
+				EC10127524172D8B00ED0EC5 /* MySecureEnclave.swift in Sources */,
 				ECB3CC7D23F392780055BEA3 /* TokenDummy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
