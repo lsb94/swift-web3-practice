@@ -7,22 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E24688E67AA553E2B6C7CD56 /* Pods_AppLaunchTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354E6FEDC17398E16771A3A4 /* Pods_AppLaunchTest.framework */; };
 		EC10127524172D8B00ED0EC5 /* MySecureEnclave.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC10127424172D8B00ED0EC5 /* MySecureEnclave.swift */; };
 		EC10127724172DDE00ED0EC5 /* MyBioAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC10127624172DDE00ED0EC5 /* MyBioAuthentication.swift */; };
-		EC10127924172E0700ED0EC5 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC10127824172E0700ED0EC5 /* LocalAuthentication.framework */; };
+		EC10129B2417938D00ED0EC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7BE45323F22EFE00DEB9E8 /* Assets.xcassets */; };
+		EC10129C241793A500ED0EC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB3CC7723F38C640055BEA3 /* Main.storyboard */; };
+		EC10129D241793AB00ED0EC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7BE45523F22EFE00DEB9E8 /* LaunchScreen.storyboard */; };
 		EC7BE44823F22EFE00DEB9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BE44723F22EFE00DEB9E8 /* AppDelegate.swift */; };
 		EC7BE44A23F22EFE00DEB9E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BE44923F22EFE00DEB9E8 /* SceneDelegate.swift */; };
 		EC7BE45223F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC7BE45023F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld */; };
-		EC7BE45423F22EFE00DEB9E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7BE45323F22EFE00DEB9E8 /* Assets.xcassets */; };
-		EC7BE45723F22EFE00DEB9E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7BE45523F22EFE00DEB9E8 /* LaunchScreen.storyboard */; };
 		EC892D992410F6AB0031E7C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892D982410F6AB0031E7C1 /* DataManager.swift */; };
+		EC96EED524187DB000D1A853 /* Pods_AppLaunchTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DF5DD4BEF203B761FA0305 /* Pods_AppLaunchTest.framework */; };
+		EC96EED624187DB000D1A853 /* Pods_AppLaunchTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37DF5DD4BEF203B761FA0305 /* Pods_AppLaunchTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ECB3CC2523F235150055BEA3 /* UIViewControl+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2423F235150055BEA3 /* UIViewControl+Alert.swift */; };
 		ECB3CC2723F264160055BEA3 /* ERC20Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2623F264160055BEA3 /* ERC20Standard.swift */; };
 		ECB3CC2923F267750055BEA3 /* ContractERC20.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2823F267750055BEA3 /* ContractERC20.swift */; };
-		ECB3CC2B23F2C0140055BEA3 /* TokenTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB3CC2A23F2C0140055BEA3 /* TokenTableView.storyboard */; };
 		ECB3CC2D23F2C3050055BEA3 /* TokenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2C23F2C3050055BEA3 /* TokenTableViewController.swift */; };
-		ECB3CC7823F38C640055BEA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB3CC7723F38C640055BEA3 /* Main.storyboard */; };
 		ECB3CC7D23F392780055BEA3 /* TokenDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC7C23F392780055BEA3 /* TokenDummy.swift */; };
 		ECB3CCC223F4E3DD0055BEA3 /* MyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CCC123F4E3DD0055BEA3 /* MyCustomTableViewCell.swift */; };
 		ECB3CCC423F5361C0055BEA3 /* NewTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CCC323F5361C0055BEA3 /* NewTokenViewController.swift */; };
@@ -31,10 +30,24 @@
 		ECFB523323FA7FF800FBEE82 /* MyWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB523223FA7FF800FBEE82 /* MyWallet.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		ECF1E44C24186469007B7E7A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EC96EED624187DB000D1A853 /* Pods_AppLaunchTest.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		1C412C7922436ADC62EE1362 /* Pods-AppLaunchTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppLaunchTest.release.xcconfig"; path = "Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest.release.xcconfig"; sourceTree = "<group>"; };
-		354E6FEDC17398E16771A3A4 /* Pods_AppLaunchTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppLaunchTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FBDB84EA88B748B4E031C81 /* Pods-AppLaunchTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppLaunchTest.debug.xcconfig"; path = "Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest.debug.xcconfig"; sourceTree = "<group>"; };
+		2F25D8243EF4E957AEB39EBA /* Pods-AppLaunchTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppLaunchTest.release.xcconfig"; path = "Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest.release.xcconfig"; sourceTree = "<group>"; };
+		37DF5DD4BEF203B761FA0305 /* Pods_AppLaunchTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppLaunchTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC0AD93BC0B5B0F21DFE871C /* Pods-AppLaunchTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppLaunchTest.debug.xcconfig"; path = "Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest.debug.xcconfig"; sourceTree = "<group>"; };
 		EC10127424172D8B00ED0EC5 /* MySecureEnclave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySecureEnclave.swift; sourceTree = "<group>"; };
 		EC10127624172DDE00ED0EC5 /* MyBioAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBioAuthentication.swift; sourceTree = "<group>"; };
 		EC10127824172E0700ED0EC5 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -66,8 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC10127924172E0700ED0EC5 /* LocalAuthentication.framework in Frameworks */,
-				E24688E67AA553E2B6C7CD56 /* Pods_AppLaunchTest.framework in Frameworks */,
+				EC96EED524187DB000D1A853 /* Pods_AppLaunchTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				EC10127824172E0700ED0EC5 /* LocalAuthentication.framework */,
-				354E6FEDC17398E16771A3A4 /* Pods_AppLaunchTest.framework */,
+				37DF5DD4BEF203B761FA0305 /* Pods_AppLaunchTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -86,8 +98,8 @@
 		B686F4EAD9E03A23DDC4FAA1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3FBDB84EA88B748B4E031C81 /* Pods-AppLaunchTest.debug.xcconfig */,
-				1C412C7922436ADC62EE1362 /* Pods-AppLaunchTest.release.xcconfig */,
+				CC0AD93BC0B5B0F21DFE871C /* Pods-AppLaunchTest.debug.xcconfig */,
+				2F25D8243EF4E957AEB39EBA /* Pods-AppLaunchTest.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -162,11 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC7BE45B23F22EFE00DEB9E8 /* Build configuration list for PBXNativeTarget "AppLaunchTest" */;
 			buildPhases = (
-				C6523D3F2502E823CDCA0E2F /* [CP] Check Pods Manifest.lock */,
+				9D83F16983E5946F7176B586 /* [CP] Check Pods Manifest.lock */,
 				EC7BE44023F22EFE00DEB9E8 /* Sources */,
 				EC7BE44123F22EFE00DEB9E8 /* Frameworks */,
 				EC7BE44223F22EFE00DEB9E8 /* Resources */,
-				1D68D66DACB33D00C8F9F37A /* [CP] Embed Pods Frameworks */,
+				BBB37B137664507C6746ADD2 /* [CP] Embed Pods Frameworks */,
+				ECF1E44C24186469007B7E7A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,34 +228,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECB3CC2B23F2C0140055BEA3 /* TokenTableView.storyboard in Resources */,
-				EC7BE45723F22EFE00DEB9E8 /* LaunchScreen.storyboard in Resources */,
-				EC7BE45423F22EFE00DEB9E8 /* Assets.xcassets in Resources */,
-				ECB3CC7823F38C640055BEA3 /* Main.storyboard in Resources */,
+				EC10129D241793AB00ED0EC5 /* LaunchScreen.storyboard in Resources */,
+				EC10129C241793A500ED0EC5 /* Main.storyboard in Resources */,
+				EC10129B2417938D00ED0EC5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D68D66DACB33D00C8F9F37A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C6523D3F2502E823CDCA0E2F /* [CP] Check Pods Manifest.lock */ = {
+		9D83F16983E5946F7176B586 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -263,6 +258,22 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		BBB37B137664507C6746ADD2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppLaunchTest/Pods-AppLaunchTest-frameworks.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -420,18 +431,21 @@
 		};
 		EC7BE45C23F22EFE00DEB9E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FBDB84EA88B748B4E031C81 /* Pods-AppLaunchTest.debug.xcconfig */;
+			baseConfigurationReference = CC0AD93BC0B5B0F21DFE871C /* Pods-AppLaunchTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C7YYJHX9GB;
 				INFOPLIST_FILE = AppLaunchTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davelee.AppLaunchTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coinplug.davelee.MyWeb3TokenWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,18 +453,39 @@
 		};
 		EC7BE45D23F22EFE00DEB9E8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C412C7922436ADC62EE1362 /* Pods-AppLaunchTest.release.xcconfig */;
+			baseConfigurationReference = 2F25D8243EF4E957AEB39EBA /* Pods-AppLaunchTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C7YYJHX9GB;
+				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = AppLaunchTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davelee.AppLaunchTest;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"BigInt\"",
+					"-framework",
+					"\"CryptoSwift\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"Keystore\"",
+					"-framework",
+					"\"PromiseKit\"",
+					"-framework",
+					"\"Web3\"",
+					"-framework",
+					"\"secp256k1\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.coinplug.davelee.MyWeb3TokenWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -466,7 +501,7 @@
 				EC7BE45A23F22EFE00DEB9E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		EC7BE45B23F22EFE00DEB9E8 /* Build configuration list for PBXNativeTarget "AppLaunchTest" */ = {
 			isa = XCConfigurationList;
@@ -475,7 +510,7 @@
 				EC7BE45D23F22EFE00DEB9E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

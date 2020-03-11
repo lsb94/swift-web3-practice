@@ -134,11 +134,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="TvV-NK-o1h">
-                        <barButtonItem key="leftBarButtonItem" title="Version" id="Mh3-yN-S7I">
-                            <connections>
-                                <action selector="buttonVersionCheck:" destination="1Nn-up-oyu" id="bSr-tn-gMV"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Version" id="Mh3-yN-S7I">
+                                <connections>
+                                    <action selector="buttonVersionCheck:" destination="1Nn-up-oyu" id="bSr-tn-gMV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="enc" id="3CU-8c-8uz">
+                                <connections>
+                                    <action selector="buttonEncrytionTest:" destination="1Nn-up-oyu" id="nLR-eK-Az0"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="dec" id="gRn-IE-POC">
+                                <connections>
+                                    <action selector="buttonDecryptionTest:" destination="1Nn-up-oyu" id="MEx-iK-LaK"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="O6X-zU-gcE">
                                 <connections>

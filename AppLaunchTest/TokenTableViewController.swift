@@ -14,8 +14,31 @@ import Keystore
 @available(iOS 11.0, *)
 class TokenTableViewController: UITableViewController {
 
+    @IBAction func buttonEncrytionTest(_ sender: Any) {
+        do {
+            guard let text = "this is my secret.".data(using: .utf8) else {
+                print("!! data is malformatted")
+                return
+            }
+            try MySecureEnclave.shared.createSecKey()
+
+            let privateKey = try MySecureEnclave.shared.loadSecKey()
+            try MySecureEnclave.shared.encrypt(privateKey: privateKey, target: text )
+        } catch{print(error)}
+    }
+    @IBAction func buttonDecryptionTest(_ sender: Any) {
+        do {
+            print("1")
+            let privateKey = try MySecureEnclave.shared.loadSecKey()
+            print("2")
+            let result = try MySecureEnclave.shared.decrypt(privateKey: privateKey)
+            print("3x")
+            print(String(decoding: result as Data, as: UTF8.self))
+        } catch{print(error)}
+    }
     @IBAction func buttonBioTest(_ sender: Any) {
-        MyBioAuthentication.shared.myBio { (result, error) in
+        let bio = MyBioAuthentication()
+        bio.myBio { (result, error) in
             print("뷰 컨트롤러: \(result)")
             let errorText = error ?? ""
             print(errorText)
