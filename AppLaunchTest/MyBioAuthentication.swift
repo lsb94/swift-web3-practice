@@ -75,7 +75,7 @@ class MyBioAuthentication {
             })
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alertController.addAction(UIAlertAction(title: "Login", style: .destructive, handler: { action in
-                if textPassword.text == "coinplug" {
+                if textPassword.text == "dave" {
                     print("패스워드 인증 성공")
                     onCompletion(true, nil)
                 } else {

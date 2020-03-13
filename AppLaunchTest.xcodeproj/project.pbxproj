@@ -18,6 +18,8 @@
 		EC892D992410F6AB0031E7C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892D982410F6AB0031E7C1 /* DataManager.swift */; };
 		EC96EED524187DB000D1A853 /* Pods_AppLaunchTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DF5DD4BEF203B761FA0305 /* Pods_AppLaunchTest.framework */; };
 		EC96EED624187DB000D1A853 /* Pods_AppLaunchTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37DF5DD4BEF203B761FA0305 /* Pods_AppLaunchTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC96EEFC2419DC4900D1A853 /* MyPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC96EEFB2419DC4900D1A853 /* MyPassword.swift */; };
+		EC96EF02241B02DC00D1A853 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC96EF01241B02DC00D1A853 /* FirstLaunchViewController.swift */; };
 		ECB3CC2523F235150055BEA3 /* UIViewControl+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2423F235150055BEA3 /* UIViewControl+Alert.swift */; };
 		ECB3CC2723F264160055BEA3 /* ERC20Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2623F264160055BEA3 /* ERC20Standard.swift */; };
 		ECB3CC2923F267750055BEA3 /* ContractERC20.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2823F267750055BEA3 /* ContractERC20.swift */; };
@@ -60,6 +62,8 @@
 		EC7BE45623F22EFE00DEB9E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC7BE45823F22EFE00DEB9E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC892D982410F6AB0031E7C1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		EC96EEFB2419DC4900D1A853 /* MyPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPassword.swift; sourceTree = "<group>"; };
+		EC96EF01241B02DC00D1A853 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		ECB3CC2423F235150055BEA3 /* UIViewControl+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControl+Alert.swift"; sourceTree = "<group>"; };
 		ECB3CC2623F264160055BEA3 /* ERC20Standard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERC20Standard.swift; sourceTree = "<group>"; };
 		ECB3CC2823F267750055BEA3 /* ContractERC20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractERC20.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 				EC7BE45023F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld */,
 				ECB3CC2423F235150055BEA3 /* UIViewControl+Alert.swift */,
 				ECB3CC2623F264160055BEA3 /* ERC20Standard.swift */,
+				EC96EF01241B02DC00D1A853 /* FirstLaunchViewController.swift */,
 				ECB3CC2C23F2C3050055BEA3 /* TokenTableViewController.swift */,
 				ECB3CC2823F267750055BEA3 /* ContractERC20.swift */,
 				ECB3CCC123F4E3DD0055BEA3 /* MyCustomTableViewCell.swift */,
@@ -146,6 +151,7 @@
 				ECFB523023FA7D5500FBEE82 /* FirstLaunch.swift */,
 				EC10127424172D8B00ED0EC5 /* MySecureEnclave.swift */,
 				EC10127624172DDE00ED0EC5 /* MyBioAuthentication.swift */,
+				EC96EEFB2419DC4900D1A853 /* MyPassword.swift */,
 			);
 			path = AppLaunchTest;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 				ECB3CC2D23F2C3050055BEA3 /* TokenTableViewController.swift in Sources */,
 				ECFB523123FA7D5500FBEE82 /* FirstLaunch.swift in Sources */,
 				EC892D992410F6AB0031E7C1 /* DataManager.swift in Sources */,
+				EC96EF02241B02DC00D1A853 /* FirstLaunchViewController.swift in Sources */,
 				EC10127724172DDE00ED0EC5 /* MyBioAuthentication.swift in Sources */,
 				ECB3CC2723F264160055BEA3 /* ERC20Standard.swift in Sources */,
 				EC7BE44823F22EFE00DEB9E8 /* AppDelegate.swift in Sources */,
@@ -293,6 +300,7 @@
 				ECB3CCC423F5361C0055BEA3 /* NewTokenViewController.swift in Sources */,
 				ECB3CCC823F54F170055BEA3 /* TransferViewController.swift in Sources */,
 				ECB3CCC223F4E3DD0055BEA3 /* MyCustomTableViewCell.swift in Sources */,
+				EC96EEFC2419DC4900D1A853 /* MyPassword.swift in Sources */,
 				EC7BE44A23F22EFE00DEB9E8 /* SceneDelegate.swift in Sources */,
 				ECFB523323FA7FF800FBEE82 /* MyWallet.swift in Sources */,
 				ECB3CC2923F267750055BEA3 /* ContractERC20.swift in Sources */,
@@ -438,7 +446,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7YYJHX9GB;
 				INFOPLIST_FILE = AppLaunchTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,7 +469,7 @@
 				DEVELOPMENT_TEAM = C7YYJHX9GB;
 				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = AppLaunchTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

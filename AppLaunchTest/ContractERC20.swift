@@ -41,25 +41,42 @@ class ContractERC20 {
         }
     }
     
-    
+    /**
+    Send some tokens to another address (locally signing the transaction)
+     */
     func sendTokenTo(address: String, amount: BigUInt) {
-        // Send some tokens to another address (locally signing the transaction)
+//        let semaphore = DispatchSemaphore(value: 0)
         let keyStoreJson = UserDefaults.standard.value(forKey: "keyJson") as! Data
         do{
+            //불러온 키스토어 디코딩
             let keyStore =  try JSONDecoder.init().decode(Keystore.self, from: keyStoreJson)
-            let myPrivateKey = try! EthereumPrivateKey(hexPrivateKey: keyStore.privateKey(password: "1q2w3e").toHexString())
+            
+            //패스워드 복호화
+            let privateKey = try MySecureEnclave.shared.loadSecKey()
+            
+            let result = try MySecureEnclave.shared.decrypt(privateKey: privateKey)
+            let password = String(decoding: result as Data, as: UTF8.self)
+            let myAddress = try EthereumAddress(hex: MyWallet.init().address, eip55: true)
+            let toAddress = try EthereumAddress(hex: address, eip55: true)
+            let myPrivateKey = try EthereumPrivateKey(hexPrivateKey: keyStore.privateKey(password: password).toHexString())
+            var gasPrice : EthereumQuantity!
+            _web3.eth.gasPrice(){ response in
+                guard let price = response.result else {
+                    return print("gas Price를 받아올 수 없습니다.")
+                }
+                gasPrice = price
+            }
+            
             firstly {
                 self._web3.eth.getTransactionCount(address: myPrivateKey.address, block: .latest)
-//                self._web3.eth.getTransactionCount(address: myPrivateKey.address, block: .latest)
             }.then { nonce in
                 try self._contract.transfer(to: EthereumAddress(hex: address, eip55: true), value: amount).createTransaction(
                     nonce: nonce,
-//                    from: myPrivateKey.address,
-                    from: EthereumAddress(hex: MyWallet.init().address, eip55: true),
+                    from: myAddress,
                     value: 0,
-                    gas: 53995,
-                    gasPrice: EthereumQuantity(quantity: 8.gwei)
-                    )!.sign(with: myPrivateKey).promise
+                    gas: 100000,
+                    gasPrice: gasPrice
+                    )!.sign(with: myPrivateKey,chainId: 3).promise
             }.then { tx in
                 self._web3.eth.sendRawTransaction(transaction: tx)
             }.done { txHash in

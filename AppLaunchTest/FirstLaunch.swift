@@ -9,15 +9,14 @@
 import Foundation
 
 final class FirstLaunch {
-    let userDefaults: UserDefaults = .standard
-    let wasLaunchedBefore: Bool
+    var wasLaunchedBefore: Bool
     var isFirstLaunch: Bool { return !wasLaunchedBefore }
     init() {
-        let key = "isFirstLaunch"
-        let wasLaunchedBefore = userDefaults.bool(forKey: key)
-        self.wasLaunchedBefore = wasLaunchedBefore
-        if !wasLaunchedBefore { userDefaults.set(true, forKey: key) }
-        
+        guard let isThereAddress = UserDefaults.standard.string(forKey: "address") else {
+            self.wasLaunchedBefore = false
+            return
+        }
+        self.wasLaunchedBefore = true
     }
     
 }

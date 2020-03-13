@@ -11,6 +11,8 @@ import Foundation
 let tag = "com.dave.web3Wallet.mySecKey".data(using: .utf8)!
 //암복호 알고리즘 EC 256비트
 let cryptoAlgo: SecKeyAlgorithm = .eciesEncryptionCofactorX963SHA256AESGCM
+//서명 알고리즘 ED 256비트
+let signAlgo: SecKeyAlgorithm = .ecdsaSignatureRFC4754
 
 
 class MySecureEnclave {
@@ -120,15 +122,43 @@ class MySecureEnclave {
         return plainText
     }
     
-    enum SecureKeyError: Error {
-        case keyStore
-        case keyLoad
-        case publicKeyDeriveError
-        case encryptionCompatibility
-        case encryptionSize
-        case encryption
-        case decryptionCompatibility
-        case decryptionSize
-        case decryption
+    func sign(privateKey: SecKey, target: Data) throws -> Data{
+        var error: Unmanaged<CFError>?
+        guard SecKeyIsAlgorithmSupported(privateKey, .sign, signAlgo) else {
+            throw SecureKeyError.signCompatibility
+        }
+        guard let signature = SecKeyCreateSignature(privateKey,
+                                                    signAlgo,
+                                                    target as CFData,
+                                                    &error) as Data? else {
+                                                        throw error!.takeRetainedValue() as Error
+        }
+        let hash = signature.sha256().toHexString()
+        print(hash)
+        return signature
     }
+    
+    func verify(privateKey: SecKey, target: Data, signature: Data) throws -> Bool {
+        var error: Unmanaged<CFError>?
+        let publicKey = SecKeyCopyPublicKey(privateKey)!
+        guard SecKeyIsAlgorithmSupported(publicKey, .verify, signAlgo) else { return false}
+        let result = SecKeyVerifySignature(publicKey,
+                                    signAlgo,
+                                    target as CFData,
+                                    signature as CFData,
+                                    &error)
+        return result
+    }
+}
+enum SecureKeyError: Error {
+    case keyStore
+    case keyLoad
+    case publicKeyDeriveError
+    case encryptionCompatibility
+    case encryptionSize
+    case encryption
+    case decryptionCompatibility
+    case decryptionSize
+    case decryption
+    case signCompatibility
 }

@@ -14,28 +14,14 @@ import Keystore
 @available(iOS 11.0, *)
 class TokenTableViewController: UITableViewController {
 
-    @IBAction func buttonEncrytionTest(_ sender: Any) {
-        do {
-            guard let text = "this is my secret.".data(using: .utf8) else {
-                print("!! data is malformatted")
-                return
-            }
-            try MySecureEnclave.shared.createSecKey()
-
-            let privateKey = try MySecureEnclave.shared.loadSecKey()
-            try MySecureEnclave.shared.encrypt(privateKey: privateKey, target: text )
-        } catch{print(error)}
-    }
     @IBAction func buttonDecryptionTest(_ sender: Any) {
         do {
-            print("1")
             let privateKey = try MySecureEnclave.shared.loadSecKey()
-            print("2")
             let result = try MySecureEnclave.shared.decrypt(privateKey: privateKey)
-            print("3x")
             print(String(decoding: result as Data, as: UTF8.self))
         } catch{print(error)}
     }
+    
     @IBAction func buttonBioTest(_ sender: Any) {
         let bio = MyBioAuthentication()
         bio.myBio { (result, error) in
@@ -95,46 +81,21 @@ class TokenTableViewController: UITableViewController {
     @IBAction func buttonTransfer(_ sender: Any) {
     }
     
-    
     //scene control
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstLaunch = FirstLaunch()
-        if firstLaunch.isFirstLaunch{
-//        if true {
-            print("This is FIRST LAUNCH")
-            let keySet = try! EthereumPrivateKey.init()
-            let privateKey = keySet.rawPrivateKey
-            print(privateKey.toHexString())
-            let password = "1q2w3e"
-            let keystore = try! Keystore(privateKey: privateKey, password: password)
-            let keystoreJson = try! JSONEncoder().encode(keystore)
-            UserDefaults.standard.set(keystoreJson, forKey: "keyJson") //private key store as json
-            let addressEip = try! EthereumAddress(hex: keystore.address, eip55: false).hex(eip55: true)
-            UserDefaults.standard.set(addressEip, forKey: "address") //eip55 address store as string
-        }
         let address = MyWallet.init().address
         print(address)
         labelWallet.text = "\(address)"
         do {
-            let etherAddress = try EthereumAddress.init(hex: address, eip55: false)
+            let etherAddress = try EthereumAddress.init(hex: address, eip55: true)
                 web3.eth.getBalance(address: etherAddress, block: .latest) { response in
-                    let balance = response.result?.quantity
-//                    let balanceETH = response.result?.quantity.eth
-//                    let balanceRaw = response.result?.quantity
-//                    print(balanceRaw)
-                    print(balance)
-//                    print(balanceETH)
-                    let ethereum = Double(balance!) / pow(10, 18)
+                    let balanceAsWei = response.result?.quantity
+                    let balanceAsEth = Double(balanceAsWei!) / pow(10, 18)
                     DispatchQueue.main.async {
-                        self.labelEth.text = String(ethereum)
+                        self.labelEth.text = String(balanceAsEth)
                     }
-                    
-//                    DispatchQueue.main.async {
-//                        self.labelEth.text = String(format: "%.9f", ethereum)
-//                    }
                 }
         } catch {print(error)}
     }
