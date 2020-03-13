@@ -3,4 +3,262 @@
    uuid = "480E9425-7B91-477C-9895-5687A7A7E000"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A1CBF15-0A27-4693-9750-283631FB990F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "sendTokenTo(address:amount:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "33B7A2F0-7884-4A43-B48D-25DAE2BB26AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "sendTokenTo(address:amount:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "009DB368-EE42-45BF-AEEE-1A52EC43C4AD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "sendTokenTo(address:amount:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "009DB368-EE42-45BF-AEEE-1A52EC43C4AD - a5225ffb0f736a8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppLaunchTest.ContractERC20.sendTokenTo(address: Swift.String, amount: BigInt.BigUInt) -&gt; ()"
+                  moduleName = "AppLaunchTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davelee/Desktop/xcode/swift-web3-nonDB-20039/AppLaunchTest/ContractERC20.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "2076">
+               </Location>
+               <Location
+                  uuid = "009DB368-EE42-45BF-AEEE-1A52EC43C4AD - 527cdc7105d48038"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Web3.Web3Response&lt;Web3.EthereumQuantity&gt;) -&gt; () in AppLaunchTest.ContractERC20.sendTokenTo(address: Swift.String, amount: BigInt.BigUInt) -&gt; ()"
+                  moduleName = "AppLaunchTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davelee/Desktop/xcode/swift-web3-nonDB-20039/AppLaunchTest/ContractERC20.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBABC4DD-0FA1-48F0-9F98-CAE9FE5AA627"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "sendTokenTo(address:amount:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC4D2110-944D-488C-A725-662AEE64AAC7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "sendTokenTo(address:amount:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE7EC640-3DF9-4CDE-93D6-98EEFD64CF1F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "sendTokenTo(address:amount:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BE7EC640-3DF9-4CDE-93D6-98EEFD64CF1F - a5225ffb0f736a8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppLaunchTest.ContractERC20.sendTokenTo(address: Swift.String, amount: BigInt.BigUInt) -&gt; ()"
+                  moduleName = "AppLaunchTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davelee/Desktop/xcode/swift-web3-nonDB-20039/AppLaunchTest/ContractERC20.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "5464">
+               </Location>
+               <Location
+                  uuid = "BE7EC640-3DF9-4CDE-93D6-98EEFD64CF1F - 5b5d5e620e733aa9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; PromiseKit.Promise&lt;Web3.EthereumQuantity&gt; in AppLaunchTest.ContractERC20.sendTokenTo(address: Swift.String, amount: BigInt.BigUInt) -&gt; ()"
+                  moduleName = "AppLaunchTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davelee/Desktop/xcode/swift-web3-nonDB-20039/AppLaunchTest/ContractERC20.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F9CA9CB4-4E51-4058-8738-A6128D6EBFF9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "sendTokenTo(address:amount:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EFA39F84-99C1-406A-8C90-76E3D7F2A033"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "sendTokenTo(address:amount:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7FCC2677-1579-4D99-A166-D0ABC6DD76BD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "sendTokenTo(address:amount:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35C00257-484A-447B-9E1D-F0C8B5B0A94E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/ContractERC20.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "sendTokenTo(address:amount:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "35C00257-484A-447B-9E1D-F0C8B5B0A94E - a5225ffb0f736a8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppLaunchTest.ContractERC20.sendTokenTo(address: Swift.String, amount: BigInt.BigUInt) -&gt; ()"
+                  moduleName = "AppLaunchTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davelee/Desktop/xcode/swift-web3-nonDB-20039/AppLaunchTest/ContractERC20.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "2908">
+               </Location>
+               <Location
+                  uuid = "35C00257-484A-447B-9E1D-F0C8B5B0A94E - 348f4a3ef9dda39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Web3.Web3Response&lt;Web3.EthereumQuantity&gt;) -&gt; () in AppLaunchTest.ContractERC20.sendTokenTo(address: Swift.String, amount: BigInt.BigUInt) -&gt; ()"
+                  moduleName = "AppLaunchTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davelee/Desktop/xcode/swift-web3-nonDB-20039/AppLaunchTest/ContractERC20.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

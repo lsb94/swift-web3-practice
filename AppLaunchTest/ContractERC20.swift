@@ -45,7 +45,6 @@ class ContractERC20 {
     Send some tokens to another address (locally signing the transaction)
      */
     func sendTokenTo(address: String, amount: BigUInt) {
-//        let semaphore = DispatchSemaphore(value: 0)
         let keyStoreJson = UserDefaults.standard.value(forKey: "keyJson") as! Data
         do{
             //불러온 키스토어 디코딩
@@ -53,18 +52,42 @@ class ContractERC20 {
             
             //패스워드 복호화
             let privateKey = try MySecureEnclave.shared.loadSecKey()
-            
             let result = try MySecureEnclave.shared.decrypt(privateKey: privateKey)
             let password = String(decoding: result as Data, as: UTF8.self)
+            
+            //트랜잭션 파라미터 구성
             let myAddress = try EthereumAddress(hex: MyWallet.init().address, eip55: true)
             let toAddress = try EthereumAddress(hex: address, eip55: true)
             let myPrivateKey = try EthereumPrivateKey(hexPrivateKey: keyStore.privateKey(password: password).toHexString())
+            
+            //가스 가격을 기다리기 위한 세마포
+            let semaphorePrice = DispatchSemaphore(value: 0)
+            //가스 가격 계산
             var gasPrice : EthereumQuantity!
             _web3.eth.gasPrice(){ response in
-                guard let price = response.result else {
-                    return print("gas Price를 받아올 수 없습니다.")
-                }
+                let price = response.result ?? EthereumQuantity(quantity: 0)
                 gasPrice = price
+                semaphorePrice.signal()
+            }
+            semaphorePrice.wait()
+            
+            //가스 양을 기다리기 위한 세마포
+            let semaphoreQuantity = DispatchSemaphore(value: 0)
+            //가스 양 계산
+            var gas : EthereumQuantity!
+            let data = _contract.transfer(to: toAddress, value: amount).encodeABI()
+            let ethereumCall = EthereumCall(from: myAddress, to: toAddress, gas: 100000, gasPrice: gasPrice, value: 0, data: data)
+            _web3.eth.estimateGas(call: ethereumCall) { response in
+                let quantity = response.result ?? EthereumQuantity(quantity: 0)
+                gas = quantity
+                 semaphoreQuantity.signal()
+            }
+            semaphoreQuantity.wait()
+            
+            print(gasPrice!)
+            print(gas!)
+            if gasPrice == EthereumQuantity(quantity: 0) || gas == EthereumQuantity(quantity: 0) {
+                return print("예상 가스 수수료를 알 수 없습니다.")
             }
             
             firstly {
@@ -74,7 +97,7 @@ class ContractERC20 {
                     nonce: nonce,
                     from: myAddress,
                     value: 0,
-                    gas: 100000,
+                    gas: gas,
                     gasPrice: gasPrice
                     )!.sign(with: myPrivateKey,chainId: 3).promise
             }.then { tx in

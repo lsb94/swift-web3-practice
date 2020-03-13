@@ -27,9 +27,7 @@ class TransferViewController: UIViewController {
         guard let sendTo = textAddressTo.text else { return print("wallet address empty") }
         guard let balanceNum = BigUInt(balance) else { return print("bigUint fail") }
         guard let amountNum: BigUInt = BigUInt((amount)) else { return print("bigUint fail") }
-        print(amountNum)
         if balanceNum >= amountNum {
-            print("send button act")
             let token = ContractERC20(web3: web3, contractAddress: tokenAddress)
             token.sendTokenTo(address: sendTo, amount: amountNum)
         } else {
