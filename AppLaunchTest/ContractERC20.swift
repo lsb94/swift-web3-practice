@@ -76,19 +76,21 @@ class ContractERC20 {
             //가스 양 계산
             var gas : EthereumQuantity!
             let data = _contract.transfer(to: toAddress, value: amount).encodeABI()
-            let ethereumCall = EthereumCall(from: myAddress, to: toAddress, gas: 100000, gasPrice: gasPrice, value: 0, data: data)
+            let ethereumCall = EthereumCall(from: myAddress, to: toAddress, gas: 100000, gasPrice: 0, value: 0, data: data)
             _web3.eth.estimateGas(call: ethereumCall) { response in
-                let quantity = response.result ?? EthereumQuantity(quantity: 0)
-                gas = quantity
+                let result = response.result ?? EthereumQuantity(quantity: 0)
+                print(result)
+                gas = EthereumQuantity(quantity: result.quantity + BigUInt(20000))
                  semaphoreQuantity.signal()
             }
             semaphoreQuantity.wait()
             
             print(gasPrice!)
             print(gas!)
-            if gasPrice == EthereumQuantity(quantity: 0) || gas == EthereumQuantity(quantity: 0) {
+            if gasPrice == EthereumQuantity(quantity: 0) || gas == EthereumQuantity(quantity: 20000) {
                 return print("예상 가스 수수료를 알 수 없습니다.")
             }
+            
             
             firstly {
                 self._web3.eth.getTransactionCount(address: myPrivateKey.address, block: .latest)
@@ -103,7 +105,7 @@ class ContractERC20 {
             }.then { tx in
                 self._web3.eth.sendRawTransaction(transaction: tx)
             }.done { txHash in
-                print(txHash.hex())
+                print("트랜잭션 전송 완료, TXID : \n\(txHash.hex())")
             }.catch { error in
                 print(error)
             }
