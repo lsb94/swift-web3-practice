@@ -13,10 +13,10 @@ class MySpinnerAlertViewController {
     static let shared = MySpinnerAlertViewController()
     
     private init() {
-        self.alertController = UIAlertController(title: "트랜잭션 전송 중입니다.", message: nil, preferredStyle: .alert)
+        self.alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
     }
     
-    internal func popSpinner() {
+    internal func popSpinner(title: String?) {
         let activityIndicator = UIActivityIndicatorView(style: .gray)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.isUserInteractionEnabled = false
@@ -25,6 +25,7 @@ class MySpinnerAlertViewController {
         alertController.view.addSubview(activityIndicator)
         alertController.view.heightAnchor.constraint(equalToConstant: 95).isActive = true
         alertController.view.widthAnchor.constraint(equalToConstant: .greatestFiniteMagnitude).isActive = true
+        alertController.title = title
         
         activityIndicator.centerXAnchor.constraint(equalTo: alertController.view.centerXAnchor, constant: 0).isActive = true
         activityIndicator.bottomAnchor.constraint(equalTo: alertController.view.bottomAnchor, constant: -20).isActive = true

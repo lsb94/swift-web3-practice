@@ -30,7 +30,7 @@ class TransferViewController: UIViewController {
         guard let amountNum: BigUInt = BigUInt((amount)) else { return print("bigUint fail") }
     
         if balanceNum >= amountNum {
-            MySpinnerAlertViewController.shared.popSpinner()
+            MySpinnerAlertViewController.shared.popSpinner(title: "트랜잭션을 전송중입니다.")
             DispatchQueue.global().async {
                 let token = ContractERC20(web3: MyWeb3.shared.web3, contractAddress: tokenAddress)
                 token.sendTokenTo(address: sendTo, amount: amountNum) { (result, message) in
