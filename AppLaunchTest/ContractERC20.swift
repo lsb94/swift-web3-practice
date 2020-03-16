@@ -104,7 +104,7 @@ class ContractERC20 {
                     }.then { tx in
                         self._web3.eth.sendRawTransaction(transaction: tx)
                     }.done { txHash in
-                        onCompletion(true, "트랜잭션 전송 완료, TXID : \n\(txHash.hex())")
+                        onCompletion(true, "TXID : \n\(txHash.hex())")
                     }.catch { error in
                         onCompletion(false, error.localizedDescription)
                     }// 트랜잭션

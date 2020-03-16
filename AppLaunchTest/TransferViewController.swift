@@ -30,18 +30,32 @@ class TransferViewController: UIViewController {
         guard let amountNum: BigUInt = BigUInt((amount)) else { return print("bigUint fail") }
     
         if balanceNum >= amountNum {
-            MySpinner.shared.showSpinner(onView: self.view)
+            MySpinnerAlertViewController.shared.popSpinner()
             DispatchQueue.global().async {
                 let token = ContractERC20(web3: MyWeb3.shared.web3, contractAddress: tokenAddress)
                 token.sendTokenTo(address: sendTo, amount: amountNum) { (result, message) in
                     if result {
-                        print(message!)
-                        MySpinner.shared.removeSpinner()
-                        self.navigationController?.popViewController(animated: true)
+                        MySpinnerAlertViewController.shared.dismissSpinner()
+                        
+                        let alert = UIAlertController(title: "트랜잭션 전송 성공", message: message, preferredStyle: .alert)
+                        let buttonOk = UIAlertAction.init(title: "확인", style: .cancel) { action in
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                        alert.addAction(buttonOk)
+                        
+                        self.present(alert, animated: true, completion: nil)
+                        
                     }else {
-                        print(message!)
-                        MySpinner.shared.removeSpinner()
-                        self.navigationController?.popViewController(animated: true)
+                        MySpinnerAlertViewController.shared.dismissSpinner()
+                        
+                        let alert = UIAlertController(title: "트랜잭션 전송 실패", message: message, preferredStyle: .alert)
+                        let buttonOk = UIAlertAction.init(title: "확인", style: .cancel) { action in
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                        alert.addAction(buttonOk)
+                        
+                        self.present(alert, animated: true, completion: nil)
+                        
                     }
                 }
             }
