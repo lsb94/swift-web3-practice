@@ -22,7 +22,6 @@
 		EC96EF02241B02DC00D1A853 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC96EF01241B02DC00D1A853 /* FirstLaunchViewController.swift */; };
 		EC96EF26241F39D800D1A853 /* MySpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC96EF25241F39D800D1A853 /* MySpinnerView.swift */; };
 		EC96EF28241F3BC900D1A853 /* MyWeb3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC96EF27241F3BC900D1A853 /* MyWeb3.swift */; };
-		EC96EF2A241F41EC00D1A853 /* MyPriavateKeyDeriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC96EF29241F41EC00D1A853 /* MyPriavateKeyDeriver.swift */; };
 		ECB3CC2523F235150055BEA3 /* UIViewControl+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2423F235150055BEA3 /* UIViewControl+Alert.swift */; };
 		ECB3CC2723F264160055BEA3 /* ERC20Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2623F264160055BEA3 /* ERC20Standard.swift */; };
 		ECB3CC2923F267750055BEA3 /* ContractERC20.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB3CC2823F267750055BEA3 /* ContractERC20.swift */; };
@@ -69,7 +68,6 @@
 		EC96EF01241B02DC00D1A853 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		EC96EF25241F39D800D1A853 /* MySpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpinnerView.swift; sourceTree = "<group>"; };
 		EC96EF27241F3BC900D1A853 /* MyWeb3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWeb3.swift; sourceTree = "<group>"; };
-		EC96EF29241F41EC00D1A853 /* MyPriavateKeyDeriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPriavateKeyDeriver.swift; sourceTree = "<group>"; };
 		ECB3CC2423F235150055BEA3 /* UIViewControl+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControl+Alert.swift"; sourceTree = "<group>"; };
 		ECB3CC2623F264160055BEA3 /* ERC20Standard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERC20Standard.swift; sourceTree = "<group>"; };
 		ECB3CC2823F267750055BEA3 /* ContractERC20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractERC20.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 				EC96EEFB2419DC4900D1A853 /* MyPassword.swift */,
 				EC96EF25241F39D800D1A853 /* MySpinnerView.swift */,
 				EC96EF27241F3BC900D1A853 /* MyWeb3.swift */,
-				EC96EF29241F41EC00D1A853 /* MyPriavateKeyDeriver.swift */,
 			);
 			path = AppLaunchTest;
 			sourceTree = "<group>";
@@ -310,7 +307,6 @@
 				ECB3CCC423F5361C0055BEA3 /* NewTokenViewController.swift in Sources */,
 				ECB3CCC823F54F170055BEA3 /* TransferViewController.swift in Sources */,
 				ECB3CCC223F4E3DD0055BEA3 /* MyCustomTableViewCell.swift in Sources */,
-				EC96EF2A241F41EC00D1A853 /* MyPriavateKeyDeriver.swift in Sources */,
 				EC96EEFC2419DC4900D1A853 /* MyPassword.swift in Sources */,
 				EC7BE44A23F22EFE00DEB9E8 /* SceneDelegate.swift in Sources */,
 				ECFB523323FA7FF800FBEE82 /* MyWallet.swift in Sources */,

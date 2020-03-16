@@ -21,6 +21,7 @@ class TransferViewController: UIViewController {
     @IBOutlet weak var indicatorSend: UIActivityIndicatorView!
     
     //navigate bar
+    @available(iOS 13.0, *)
     @IBAction func buttonSend(_ sender: Any) {
         guard let balance = textBalance.text else { return print("balance empty") }
         guard let amount = textAmount.text else { return print("amount empty") }
@@ -31,6 +32,9 @@ class TransferViewController: UIViewController {
     
         if balanceNum >= amountNum {
             MySpinner.shared.showSpinner(onView: self.view)
+            self.navigationController?.view.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+            self.navigationController?.view.isUserInteractionEnabled = false
+            self.view.isUserInteractionEnabled = false
             DispatchQueue.global().async {
                 let token = ContractERC20(web3: MyWeb3.shared.web3, contractAddress: tokenAddress)
                 token.sendTokenTo(address: sendTo, amount: amountNum) { (result, message) in
