@@ -11,7 +11,7 @@
         <attribute name="order" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Wallet" positionX="-63" positionY="-18" width="128" height="73"/>
         <element name="Token" positionX="-54" positionY="9" width="128" height="103"/>
+        <element name="Wallet" positionX="-63" positionY="-18" width="128" height="73"/>
     </elements>
 </model>

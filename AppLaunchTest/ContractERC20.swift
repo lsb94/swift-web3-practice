@@ -10,6 +10,8 @@ import UIKit
 import Web3
 import Keystore
 
+typealias onCompletion = (Bool, String?) -> Void
+
 class ContractERC20 {
     var _web3: Web3
     var _contractAddress: EthereumAddress
@@ -44,7 +46,8 @@ class ContractERC20 {
     /**
     Send some tokens to another address (locally signing the transaction)
      */
-    func sendTokenTo(address: String, amount: BigUInt) {
+    func sendTokenTo(address: String, amount: BigUInt, onCompletion: @escaping(onCompletion)) {
+        //키스토어 불러오기
         let keyStoreJson = UserDefaults.standard.value(forKey: "keyJson") as! Data
         do{
             //불러온 키스토어 디코딩
@@ -55,61 +58,59 @@ class ContractERC20 {
             let result = try MySecureEnclave.shared.decrypt(privateKey: privateKey)
             let password = String(decoding: result as Data, as: UTF8.self)
             
-            //트랜잭션 파라미터 구성
-            let myAddress = try EthereumAddress(hex: MyWallet.init().address, eip55: true)
-            let toAddress = try EthereumAddress(hex: address, eip55: true)
+            //키스토어 복호화하여 지갑 개인키 추출
             let myPrivateKey = try EthereumPrivateKey(hexPrivateKey: keyStore.privateKey(password: password).toHexString())
             
-            //가스 가격을 기다리기 위한 세마포
-            let semaphorePrice = DispatchSemaphore(value: 0)
-            //가스 가격 계산
+            //트랜잭션 주소 구성
+            let myAddress = try EthereumAddress(hex: MyWallet.init().address, eip55: true)
+            let toAddress = try EthereumAddress(hex: address, eip55: true)
+            
+            
+            
+            //가스 가격 가져오기
             var gasPrice : EthereumQuantity!
-            _web3.eth.gasPrice(){ response in
+            MyWeb3.shared.web3.eth.gasPrice(){ response in
                 let price = response.result ?? EthereumQuantity(quantity: 0)
                 gasPrice = price
-                semaphorePrice.signal()
-            }
-            semaphorePrice.wait()
-            
-            //가스 양을 기다리기 위한 세마포
-            let semaphoreQuantity = DispatchSemaphore(value: 0)
-            //가스 양 계산
-            var gas : EthereumQuantity!
-            let data = _contract.transfer(to: toAddress, value: amount).encodeABI()
-            let ethereumCall = EthereumCall(from: myAddress, to: toAddress, gas: 100000, gasPrice: 0, value: 0, data: data)
-            _web3.eth.estimateGas(call: ethereumCall) { response in
-                let result = response.result ?? EthereumQuantity(quantity: 0)
-                print(result)
-                gas = EthereumQuantity(quantity: result.quantity + BigUInt(20000))
-                 semaphoreQuantity.signal()
-            }
-            semaphoreQuantity.wait()
-            
-            print(gasPrice!)
-            print(gas!)
-            if gasPrice == EthereumQuantity(quantity: 0) || gas == EthereumQuantity(quantity: 20000) {
-                return print("예상 가스 수수료를 알 수 없습니다.")
-            }
-            
-            
-            firstly {
-                self._web3.eth.getTransactionCount(address: myPrivateKey.address, block: .latest)
-            }.then { nonce in
-                try self._contract.transfer(to: EthereumAddress(hex: address, eip55: true), value: amount).createTransaction(
-                    nonce: nonce,
-                    from: myAddress,
-                    value: 0,
-                    gas: gas,
-                    gasPrice: gasPrice
-                    )!.sign(with: myPrivateKey,chainId: 3).promise
-            }.then { tx in
-                self._web3.eth.sendRawTransaction(transaction: tx)
-            }.done { txHash in
-                print("트랜잭션 전송 완료, TXID : \n\(txHash.hex())")
-            }.catch { error in
-                print(error)
-            }
-        } catch {print("wrong!")}
+                
+                //가스 양 계산하기
+                var gas : EthereumQuantity!
+                let contract = self._contract
+                let data = contract.transfer(to: toAddress, value: amount).encodeABI()
+                let ethereumCall = EthereumCall(from: myAddress, to: toAddress, gas: 100000, gasPrice: 0, value: 0, data: data)
+                MyWeb3.shared.web3.eth.estimateGas(call: ethereumCall) { response in
+                    let result = response.result ?? EthereumQuantity(quantity: 0)
+                    print(result)
+                    gas = EthereumQuantity(quantity: result.quantity + BigUInt(20000))
+                    
+                    //가스 수수료 확인
+                    print(gasPrice!)
+                    print(gas!)
+                    if gasPrice == EthereumQuantity(quantity: 0) || gas == EthereumQuantity(quantity: 20000) {
+                        onCompletion(false, "예상 가스 수수료를 알 수 없습니다.")
+                    } // 가스 수수료
+                    
+                    //트랜잭션 생성 및 전송
+                    firstly {
+                        self._web3.eth.getTransactionCount(address: myPrivateKey.address, block: .latest)
+                    }.then { nonce in
+                        try self._contract.transfer(to: EthereumAddress(hex: address, eip55: true), value: amount).createTransaction(
+                            nonce: nonce,
+                            from: myAddress,
+                            value: 0,
+                            gas: gas,
+                            gasPrice: gasPrice
+                            )!.sign(with: myPrivateKey,chainId: 3).promise
+                    }.then { tx in
+                        self._web3.eth.sendRawTransaction(transaction: tx)
+                    }.done { txHash in
+                        onCompletion(true, "트랜잭션 전송 완료, TXID : \n\(txHash.hex())")
+                    }.catch { error in
+                        onCompletion(false, error.localizedDescription)
+                    }// 트랜잭션
+                }//가스 양
+            }//가스 가격
+        } catch { onCompletion(false, "Send Token Malfunction") }
     }
 }
 

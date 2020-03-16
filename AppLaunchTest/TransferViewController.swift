@@ -12,12 +12,13 @@ import Web3
 
 class TransferViewController: UIViewController {
 
-    //textfield
+    //outlet
     @IBOutlet weak var textSymbol: UITextField!
     @IBOutlet weak var textContract: UITextField!
     @IBOutlet weak var textBalance: UITextField!
     @IBOutlet weak var textAddressTo: UITextField!
     @IBOutlet weak var textAmount: UITextField!
+    @IBOutlet weak var indicatorSend: UIActivityIndicatorView!
     
     //navigate bar
     @IBAction func buttonSend(_ sender: Any) {
@@ -27,14 +28,27 @@ class TransferViewController: UIViewController {
         guard let sendTo = textAddressTo.text else { return print("wallet address empty") }
         guard let balanceNum = BigUInt(balance) else { return print("bigUint fail") }
         guard let amountNum: BigUInt = BigUInt((amount)) else { return print("bigUint fail") }
+    
         if balanceNum >= amountNum {
-            let token = ContractERC20(web3: web3, contractAddress: tokenAddress)
-            token.sendTokenTo(address: sendTo, amount: amountNum)
+            MySpinner.shared.showSpinner(onView: self.view)
+            DispatchQueue.global().async {
+                let token = ContractERC20(web3: MyWeb3.shared.web3, contractAddress: tokenAddress)
+                token.sendTokenTo(address: sendTo, amount: amountNum) { (result, message) in
+                    if result {
+                        print(message!)
+                        MySpinner.shared.removeSpinner()
+                        self.navigationController?.popViewController(animated: true)
+                    }else {
+                        print(message!)
+                        MySpinner.shared.removeSpinner()
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            }
         } else {
             alert(title: "잔액 부족", message: "잔액이 부족합니다.")
             return
         }
-        self.navigationController?.popViewController(animated: true)
     }
     
     //scene control
@@ -47,7 +61,4 @@ class TransferViewController: UIViewController {
         textContract.text = token.addressDummy
         textBalance.text = token.balanceDummy
     }
-    
-    // web3 inintialize
-    let web3 = Web3(rpcURL: "https://ropsten.infura.io/v3/45d946bade934f1a8d099e0d219884e6")
 }
