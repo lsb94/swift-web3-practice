@@ -117,7 +117,7 @@ class TokenTableViewController: UITableViewController {
     }
     
     // web3 inintialize
-    let web3 = Web3(rpcURL: "https://ropsten.infura.io/v3/45d946bade934f1a8d099e0d219884e6")
+    let web3 = MyWeb3.shared.web3
     
     
 
@@ -128,7 +128,6 @@ class TokenTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return TokenDummy.dummyTokenList.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellToken", for: indexPath) as! MyCustomTableViewCell

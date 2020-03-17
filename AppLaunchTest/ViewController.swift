@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Web3
-import PromiseKit
 
 class ViewController: UIViewController {
 
@@ -17,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    let web3 = Web3(rpcURL: "https://ropsten.infura.io/v3/45d946bade934f1a8d099e0d219884e6")
+    let web3 = MyWeb3.shared.web3
     /*
 
     
