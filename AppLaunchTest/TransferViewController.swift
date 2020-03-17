@@ -24,8 +24,7 @@ class TransferViewController: UIViewController {
     @IBAction func buttonQR(_ sender: Any) {
     }
     
-    
-    //navigate bar
+    //navigate bar actions
     @IBAction func buttonSend(_ sender: Any) {
         guard let balance = textBalance.text else { return print("balance empty") }
         guard let amount = textAmount.text else { return print("amount empty") }

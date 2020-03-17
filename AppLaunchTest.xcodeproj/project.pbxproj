@@ -12,6 +12,7 @@
 		EC10129B2417938D00ED0EC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7BE45323F22EFE00DEB9E8 /* Assets.xcassets */; };
 		EC10129C241793A500ED0EC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB3CC7723F38C640055BEA3 /* Main.storyboard */; };
 		EC10129D241793AB00ED0EC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7BE45523F22EFE00DEB9E8 /* LaunchScreen.storyboard */; };
+		EC45061E24205A6B00C2C808 /* MyQRGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45061D24205A6B00C2C808 /* MyQRGenerator.swift */; };
 		EC7BE44823F22EFE00DEB9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BE44723F22EFE00DEB9E8 /* AppDelegate.swift */; };
 		EC7BE45223F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC7BE45023F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld */; };
 		EC892D992410F6AB0031E7C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892D982410F6AB0031E7C1 /* DataManager.swift */; };
@@ -57,6 +58,7 @@
 		EC10127424172D8B00ED0EC5 /* MySecureEnclave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySecureEnclave.swift; sourceTree = "<group>"; };
 		EC10127624172DDE00ED0EC5 /* MyBioAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBioAuthentication.swift; sourceTree = "<group>"; };
 		EC10127824172E0700ED0EC5 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		EC45061D24205A6B00C2C808 /* MyQRGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRGenerator.swift; sourceTree = "<group>"; };
 		EC7BE44423F22EFE00DEB9E8 /* AppLaunchTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppLaunchTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7BE44723F22EFE00DEB9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC7BE44B23F22EFE00DEB9E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,15 +149,15 @@
 				EC7BE45523F22EFE00DEB9E8 /* LaunchScreen.storyboard */,
 				EC7BE45823F22EFE00DEB9E8 /* Info.plist */,
 				EC7BE45023F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld */,
-				ECB3CC2423F235150055BEA3 /* UIViewControl+Alert.swift */,
-				ECB3CC2623F264160055BEA3 /* ERC20Standard.swift */,
 				EC96EF01241B02DC00D1A853 /* FirstLaunchViewController.swift */,
 				ECB3CC2C23F2C3050055BEA3 /* TokenTableViewController.swift */,
-				ECB3CC2823F267750055BEA3 /* ContractERC20.swift */,
 				ECB3CCC123F4E3DD0055BEA3 /* MyCustomTableViewCell.swift */,
 				ECB3CCC323F5361C0055BEA3 /* NewTokenViewController.swift */,
 				ECB3CCC723F54F170055BEA3 /* TransferViewController.swift */,
 				EC96EF2F241F7A2F00D1A853 /* ScannerViewController.swift */,
+				ECB3CC2423F235150055BEA3 /* UIViewControl+Alert.swift */,
+				ECB3CC2623F264160055BEA3 /* ERC20Standard.swift */,
+				ECB3CC2823F267750055BEA3 /* ContractERC20.swift */,
 				ECFB523023FA7D5500FBEE82 /* FirstLaunch.swift */,
 				EC10127424172D8B00ED0EC5 /* MySecureEnclave.swift */,
 				EC10127624172DDE00ED0EC5 /* MyBioAuthentication.swift */,
@@ -164,6 +166,7 @@
 				EC96EF25241F39D800D1A853 /* MySpinnerView.swift */,
 				EC96EF27241F3BC900D1A853 /* MyWeb3.swift */,
 				EC96EF2D241F5E7E00D1A853 /* MyAlertOnTop.swift */,
+				EC45061D24205A6B00C2C808 /* MyQRGenerator.swift */,
 			);
 			path = AppLaunchTest;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				ECB3CC2D23F2C3050055BEA3 /* TokenTableViewController.swift in Sources */,
 				EC96EF30241F7A3000D1A853 /* ScannerViewController.swift in Sources */,
 				EC96EF28241F3BC900D1A853 /* MyWeb3.swift in Sources */,
+				EC45061E24205A6B00C2C808 /* MyQRGenerator.swift in Sources */,
 				ECFB523123FA7D5500FBEE82 /* FirstLaunch.swift in Sources */,
 				EC892D992410F6AB0031E7C1 /* DataManager.swift in Sources */,
 				EC96EF2E241F5E7E00D1A853 /* MyAlertOnTop.swift in Sources */,

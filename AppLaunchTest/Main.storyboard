@@ -141,25 +141,18 @@
                                     <action selector="buttonVersionCheck:" destination="1Nn-up-oyu" id="bSr-tn-gMV"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="password 복호화" id="gRn-IE-POC">
+                            <barButtonItem title="MY QR" id="NhX-2r-Op5">
                                 <connections>
-                                    <action selector="buttonDecryptionTest:" destination="1Nn-up-oyu" id="MEx-iK-LaK"/>
+                                    <action selector="buttonMyQR:" destination="1Nn-up-oyu" id="POG-6b-9Pa"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="O6X-zU-gcE">
-                                <connections>
-                                    <action selector="buttonAddToken:" destination="1Nn-up-oyu" id="EpZ-ep-fvq"/>
-                                    <segue destination="Wj4-7z-5V6" kind="presentation" id="qSZ-Sf-Gv1"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="BIO" id="Fo5-Vt-xt3">
-                                <connections>
-                                    <action selector="buttonBioTest:" destination="1Nn-up-oyu" id="a78-Nm-3Zg"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="O6X-zU-gcE">
+                            <connections>
+                                <action selector="buttonAddToken:" destination="1Nn-up-oyu" id="EpZ-ep-fvq"/>
+                                <segue destination="Wj4-7z-5V6" kind="presentation" id="qSZ-Sf-Gv1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="labelEth" destination="zC0-x3-zK7" id="oi3-9d-veD"/>

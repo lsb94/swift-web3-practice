@@ -13,7 +13,8 @@ import Keystore
 
 @available(iOS 11.0, *)
 class TokenTableViewController: UITableViewController {
-
+    
+    //navigationbar actions
     @IBAction func buttonDecryptionTest(_ sender: Any) {
         do {
             let privateKey = try MySecureEnclave.shared.loadSecKey()
@@ -30,10 +31,24 @@ class TokenTableViewController: UITableViewController {
             print(errorText)
         }
     }
-    //navigate bar
-    @IBOutlet weak var labelWallet: UILabel!
-    @IBOutlet weak var labelEth: UILabel!
-    
+    @IBAction func buttonMyQR(_ sender: Any) {
+        guard let myAddress = labelWallet.text else {
+            return
+        }
+        guard let qrImage = MyQRGenerator.generateQRCode(from: myAddress) else {
+            return
+        }
+        let qrView = UIImageView(frame: CGRect(x: 35, y: -220, width: 200, height: 200))
+        qrView.image = qrImage
+        
+        let alert = UIAlertController.init(title: "QR로 내 지갑주소 보기", message: myAddress, preferredStyle: .alert)
+        alert.view.addSubview(qrView)
+        alert.addAction(UIAlertAction.init(title: "확인", style: .cancel, handler: nil))
+        
+        MyAlertOnTop.shared.getTopViewController()?.present(alert, animated: true, completion: nil)
+        
+        
+    }
     @IBAction func buttonVersionCheck(_ sender: Any) {
         var versionInfo: String = ""
         
@@ -56,15 +71,16 @@ class TokenTableViewController: UITableViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     self.alert(title: "Version Info", message: versionInfo)
                 }
- 
+    }
+    @IBAction func buttonAddToken(_ sender: Any) {
     }
     
-    @IBAction func buttonAddToken(_ sender: Any) {
-        
-    }
+    //view outlets
+    @IBOutlet weak var labelWallet: UILabel!
+    @IBOutlet weak var labelEth: UILabel!
+    
     
     //cell
-    
     @IBAction func buttonCheckBalance(_ sender: Any) {
         
         let erc20 = ContractERC20(web3: web3, contractAddress: TokenDummy.dummyTokenList[0].addressDummy)
