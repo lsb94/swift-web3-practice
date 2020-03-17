@@ -22,7 +22,7 @@ class FirstLaunchViewController: UIViewController {
 //                    if true {
             print("This is FIRST LAUNCH")
             var password : String!
-            MySpinnerAlertViewController.shared.popSpinner(title: "지갑 생성중입니다.")
+            MySpinnerAlertViewController.shared.presentSpinner(title: "지갑 생성중입니다.")
             DispatchQueue.global().sync {
                 MyPassword.inputPassword() { (result, password, error) in
                     if result { // passsword is "something", error is nil

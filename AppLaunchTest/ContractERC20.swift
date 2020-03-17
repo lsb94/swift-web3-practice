@@ -80,14 +80,15 @@ class ContractERC20 {
                 let data = contract.transfer(to: toAddress, value: amount).encodeABI()
                 let ethereumCall = EthereumCall(from: myAddress, to: tokenAddress, gas: 100000, gasPrice: 0, value: 0, data: data)
                 MyWeb3.shared.web3.eth.estimateGas(call: ethereumCall) { response in
+//                    response.status.description // 성공여부?
                     let result = response.result ?? EthereumQuantity(quantity: 0)
                     print(result)
-                    gas = EthereumQuantity(quantity: result.quantity + BigUInt(10000))
+                    gas = EthereumQuantity(quantity: result.quantity + BigUInt(0))
                     
                     //가스 수수료 확인
                     print(gasPrice!)
                     print(gas!)
-                    if gasPrice == EthereumQuantity(quantity: 0) || gas == EthereumQuantity(quantity: 10000) {
+                    if gasPrice == EthereumQuantity(quantity: 0) || gas == EthereumQuantity(quantity: 0) {
                         onCompletion(false, "예상 가스 수수료를 알 수 없습니다.")
                     } // 가스 수수료
                     

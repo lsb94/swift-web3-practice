@@ -16,7 +16,7 @@ class MySpinnerAlertViewController {
         self.alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
     }
     
-    internal func popSpinner(title: String?) {
+    internal func presentSpinner(title: String?) {
         let activityIndicator = UIActivityIndicatorView(style: .gray)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.isUserInteractionEnabled = false
