@@ -43,6 +43,8 @@ class TransferViewController: UIViewController {
                         DispatchQueue.main.async {
                             MySpinnerAlertViewController.shared.dismissSpinner()
                         }
+                        print(message!)
+                        
                         let alert = UIAlertController(title: "트랜잭션 전송 성공", message: message, preferredStyle: .alert)
                         let buttonOk = UIAlertAction.init(title: "확인", style: .cancel) { action in
                             self.navigationController?.popViewController(animated: true)

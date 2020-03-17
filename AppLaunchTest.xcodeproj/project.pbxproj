@@ -155,6 +155,7 @@
 				ECB3CCC123F4E3DD0055BEA3 /* MyCustomTableViewCell.swift */,
 				ECB3CCC323F5361C0055BEA3 /* NewTokenViewController.swift */,
 				ECB3CCC723F54F170055BEA3 /* TransferViewController.swift */,
+				EC96EF2F241F7A2F00D1A853 /* ScannerViewController.swift */,
 				ECFB523023FA7D5500FBEE82 /* FirstLaunch.swift */,
 				EC10127424172D8B00ED0EC5 /* MySecureEnclave.swift */,
 				EC10127624172DDE00ED0EC5 /* MyBioAuthentication.swift */,
@@ -163,7 +164,6 @@
 				EC96EF25241F39D800D1A853 /* MySpinnerView.swift */,
 				EC96EF27241F3BC900D1A853 /* MyWeb3.swift */,
 				EC96EF2D241F5E7E00D1A853 /* MyAlertOnTop.swift */,
-				EC96EF2F241F7A2F00D1A853 /* ScannerViewController.swift */,
 			);
 			path = AppLaunchTest;
 			sourceTree = "<group>";

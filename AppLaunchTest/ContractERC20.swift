@@ -64,6 +64,7 @@ class ContractERC20 {
             //트랜잭션 주소 구성
             let myAddress = try EthereumAddress(hex: MyWallet.init().address, eip55: true)
             let toAddress = try EthereumAddress(hex: address, eip55: true)
+            let tokenAddress = _contractAddress
             
             
             
@@ -77,16 +78,16 @@ class ContractERC20 {
                 var gas : EthereumQuantity!
                 let contract = self._contract
                 let data = contract.transfer(to: toAddress, value: amount).encodeABI()
-                let ethereumCall = EthereumCall(from: myAddress, to: toAddress, gas: 100000, gasPrice: 0, value: 0, data: data)
+                let ethereumCall = EthereumCall(from: myAddress, to: tokenAddress, gas: 100000, gasPrice: 0, value: 0, data: data)
                 MyWeb3.shared.web3.eth.estimateGas(call: ethereumCall) { response in
                     let result = response.result ?? EthereumQuantity(quantity: 0)
                     print(result)
-                    gas = EthereumQuantity(quantity: result.quantity + BigUInt(20000))
+                    gas = EthereumQuantity(quantity: result.quantity + BigUInt(10000))
                     
                     //가스 수수료 확인
                     print(gasPrice!)
                     print(gas!)
-                    if gasPrice == EthereumQuantity(quantity: 0) || gas == EthereumQuantity(quantity: 20000) {
+                    if gasPrice == EthereumQuantity(quantity: 0) || gas == EthereumQuantity(quantity: 10000) {
                         onCompletion(false, "예상 가스 수수료를 알 수 없습니다.")
                     } // 가스 수수료
                     
