@@ -18,8 +18,8 @@ class FirstLaunchViewController: UIViewController {
         // Do any additional setup after loading the view.
         print("first?")
         let firstLaunch = FirstLaunch()
-//        if firstLaunch.isFirstLaunch{
-                    if true {
+        if firstLaunch.isFirstLaunch{
+//                    if true {
             print("This is FIRST LAUNCH")
             var password : String!
             MySpinnerAlertViewController.shared.popSpinner(title: "지갑 생성중입니다.")

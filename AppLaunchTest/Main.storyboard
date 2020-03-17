@@ -213,7 +213,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YjP-pp-FDk">
-                                <rect key="frame" x="20" y="330" width="374" height="34"/>
+                                <rect key="frame" x="20" y="330" width="330" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -242,6 +242,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ek6-DX-rwf">
+                                <rect key="frame" x="358" y="330" width="36" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="QEu-bh-bvg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="gE5-zT-AOQ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="qrcode" catalog="system"/>
+                                <connections>
+                                    <action selector="buttonQR:" destination="zpu-tT-YXi" eventType="touchUpInside" id="GHB-gD-fsw"/>
+                                    <segue destination="5cA-zZ-0Lh" kind="show" id="jJG-sb-8E2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -249,8 +261,10 @@
                             <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="H0x-kP-rMI" secondAttribute="trailing" constant="20" id="3mI-Ho-RYu"/>
                             <constraint firstItem="H0x-kP-rMI" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="6C6-Qg-8e1"/>
                             <constraint firstItem="sn8-f2-osO" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="7Ag-xm-qyG"/>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="Ek6-DX-rwf" secondAttribute="trailing" constant="20" id="7PJ-IF-Hkn"/>
                             <constraint firstItem="H0x-kP-rMI" firstAttribute="top" secondItem="CFP-U7-ajH" secondAttribute="bottom" constant="8" id="8Ds-w5-FX7"/>
                             <constraint firstItem="d3B-h0-X8W" firstAttribute="top" secondItem="dyU-61-ISe" secondAttribute="bottom" constant="8" id="8fY-K6-HqF"/>
+                            <constraint firstItem="dyU-61-ISe" firstAttribute="top" secondItem="Ek6-DX-rwf" secondAttribute="bottom" constant="6.5" id="9Sa-CX-xo8"/>
                             <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="GVp-V2-gcZ" secondAttribute="trailing" constant="20" id="DBb-hv-mVL"/>
                             <constraint firstItem="YjP-pp-FDk" firstAttribute="top" secondItem="5GN-WK-UAk" secondAttribute="bottom" constant="8" id="DkS-H5-ijp"/>
                             <constraint firstItem="5GN-WK-UAk" firstAttribute="top" secondItem="GVp-V2-gcZ" secondAttribute="bottom" constant="8" id="G3a-fj-bOi"/>
@@ -260,6 +274,7 @@
                             <constraint firstItem="CFP-U7-ajH" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="Lvn-n9-BuZ"/>
                             <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="d3B-h0-X8W" secondAttribute="trailing" constant="20" id="McT-df-vR5"/>
                             <constraint firstItem="dyU-61-ISe" firstAttribute="top" secondItem="YjP-pp-FDk" secondAttribute="bottom" constant="8" id="QhX-W3-ycm"/>
+                            <constraint firstItem="Ek6-DX-rwf" firstAttribute="top" secondItem="5GN-WK-UAk" secondAttribute="bottom" constant="7" id="SkQ-hg-xei"/>
                             <constraint firstItem="5GN-WK-UAk" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="Syq-KS-5GM"/>
                             <constraint firstItem="sn8-f2-osO" firstAttribute="top" secondItem="qbG-D9-DZD" secondAttribute="top" id="TWh-8a-53Z"/>
                             <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="dyU-61-ISe" secondAttribute="trailing" constant="20" id="WGl-DU-q7G"/>
@@ -273,8 +288,8 @@
                             <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="Fk6-yu-Dks" secondAttribute="trailing" constant="20" id="p2G-go-dkO"/>
                             <constraint firstItem="dyU-61-ISe" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="qBe-tS-hO6"/>
                             <constraint firstItem="d3B-h0-X8W" firstAttribute="leading" secondItem="qbG-D9-DZD" secondAttribute="leading" constant="20" id="tXm-Ob-7FI"/>
+                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="YjP-pp-FDk" secondAttribute="trailing" constant="64" id="uvt-o3-wjS"/>
                             <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="UTN-W1-nTW" secondAttribute="trailing" constant="20" id="v1i-Av-Yog"/>
-                            <constraint firstItem="qbG-D9-DZD" firstAttribute="trailing" secondItem="YjP-pp-FDk" secondAttribute="trailing" constant="20" id="xim-a4-ogR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qbG-D9-DZD"/>
                     </view>
@@ -296,6 +311,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOK-2c-h4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="498.88392857142856"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="yRa-QV-mWU">
+            <objects>
+                <viewController id="5cA-zZ-0Lh" customClass="ScannerViewController" customModule="AppLaunchTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yat-pR-3kc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dKd-X4-sGR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="z4F-O0-Pzc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DzQ-BH-3q7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2547" y="498"/>
         </scene>
         <!--New Token-->
         <scene sceneID="roi-Kr-tPC">
@@ -426,6 +457,7 @@
     <resources>
         <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
+        <image name="qrcode" catalog="system" width="64" height="56"/>
         <image name="questionmark.square" catalog="system" width="64" height="56"/>
     </resources>
 </document>
