@@ -23,6 +23,12 @@ class TokenDummy {
         TokenDummy(balance: "unknown", symbol: "ZEENUS", address: "0xC84f8B669Ccb91C86AB2b38060362b9956f2De52"),
         TokenDummy(balance: "1", symbol: "2", address: "3"),
         TokenDummy(balance: "1", symbol: "2", address: "3"),
+        TokenDummy(balance: "1", symbol: "2", address: "3"),TokenDummy(balance: "1", symbol: "2", address: "3"),
+        TokenDummy(balance: "1", symbol: "2", address: "3"),
+        TokenDummy(balance: "1", symbol: "2", address: "3"),TokenDummy(balance: "1", symbol: "2", address: "3"),
+        TokenDummy(balance: "1", symbol: "2", address: "3"),
+        TokenDummy(balance: "1", symbol: "2", address: "3"),TokenDummy(balance: "1", symbol: "2", address: "3"),
+        TokenDummy(balance: "1", symbol: "2", address: "3"),
         TokenDummy(balance: "1", symbol: "2", address: "3"),
         TokenDummy(balance: "1", symbol: "2", address: "3")]
 }

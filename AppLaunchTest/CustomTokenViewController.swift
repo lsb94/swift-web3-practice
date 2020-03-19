@@ -50,9 +50,9 @@ class CustomTokenViewController: UIViewController {
                 }
         } catch {print(error)}
         
-        //Tokens 부분 데이터 로딩
-//        collectionViewTokens.addSubview(<#T##view: UIView##UIView#>)
-        
+        //Tokens collection 부분 데이터 로딩
+        let uinib = UINib(nibName: "CustomTokenCollectionViewCell", bundle: nil)
+        collectionViewTokens.register(uinib, forCellWithReuseIdentifier: "CollectionCellToken")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -78,6 +78,24 @@ class CustomTokenViewController: UIViewController {
     @objc private func buttonAddToken() {
         print("add")
     }
-    
+}
 
+extension CustomTokenViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return TokenDummy.dummyTokenList.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: CustomTokenCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCellToken", for: indexPath) as! CustomTokenCollectionViewCell
+        let target = TokenDummy.dummyTokenList[indexPath.row]
+
+        cell.textTokenBalacne.text = target.balanceDummy
+        cell.textTokenSymbol.text = target.symbolDummy
+
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.width/4)
+    }
 }
