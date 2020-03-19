@@ -166,7 +166,7 @@
         <!--Token Transfer-->
         <scene sceneID="rp1-As-DVz">
             <objects>
-                <viewController id="zpu-tT-YXi" customClass="TransferViewController" customModule="AppLaunchTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransferViewController" id="zpu-tT-YXi" customClass="TransferViewController" customModule="AppLaunchTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eCy-nY-0op">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
