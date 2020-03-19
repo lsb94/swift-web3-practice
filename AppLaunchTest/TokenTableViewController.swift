@@ -84,13 +84,13 @@ class TokenTableViewController: UITableViewController {
     @IBAction func buttonCheckBalance(_ sender: Any) {
         
         let erc20 = ContractERC20(web3: web3, contractAddress: TokenDummy.dummyTokenList[0].addressDummy)
-        let message = erc20.getBalanceOf(walletAddress: MyWallet.init().address) //여기에 이제 만든 월렛 어드레스 정보넣어야
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3){
-            let balance = erc20.getBalance()
-            TokenDummy.dummyTokenList[0].balanceDummy = balance // index of tokenlist is fixed, need to be flexible.
-            self.tableView.reloadData() // As-Is: whole table view is reloading, To-Be: only the cell will be reloaded(see below)
-            //            self.tableView.reloadRows(at: 0, with: .none) // index path 0 does not work.
+        let message = erc20.getBalanceOf(walletAddress: MyWallet.init().address) {result, balance in
+            if result {
+                TokenDummy.dummyTokenList[0].balanceDummy = balance!
+            }
         }
+        self.tableView.reloadData() // As-Is: whole table view is reloading, To-Be: only the cell will be reloaded(see below)
+            //            self.tableView.reloadRows(at: 0, with: .none) // index path 0 does not work.
     }
     
     

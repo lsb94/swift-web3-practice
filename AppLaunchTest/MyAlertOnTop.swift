@@ -26,10 +26,10 @@ class MyAlertOnTop {
         }
         return topViewController
     }
-    internal func popAlert(title: String?, message: String?) {
+    internal func presentAlert(title: String?, message: String?) {
         self.alertController.title = title
         self.alertController.message = message
-        
+        self.alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
         guard let topViewController = self.getTopViewController() else {
             return
         }

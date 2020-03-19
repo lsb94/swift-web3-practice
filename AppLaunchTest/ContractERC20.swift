@@ -24,20 +24,21 @@ class ContractERC20 {
         self._contract = web3.eth.Contract(type: GenericERC20Contract.self, address: self._contractAddress)
     }
     
-    func getBalance() -> String{
-        return self._balance
+    func getBalance(onCompletion: @escaping(onCompletion)){
+        onCompletion(true, self._balance)
+        
     }
     func setBalance(amount: String) {
         self._balance = amount
     }
     
-    func getBalanceOf(walletAddress: String) {
+    func getBalanceOf(walletAddress: String, onCompletion: @escaping(onCompletion)) {
         // Get balance of some address
         firstly {
-            try self._contract.balanceOf(address: EthereumAddress(hex: walletAddress, eip55: false)).call()
+            try self._contract.balanceOf(address: EthereumAddress(hex: walletAddress, eip55: true)).call()
         }.done { outputs in
-            print(outputs["_balance"] as? BigUInt)
-            self._balance = String(outputs["_balance"] as! BigUInt)
+            self._balance = (String(outputs["_balance"] as! BigUInt))
+            onCompletion(true, String(outputs["_balance"] as! BigUInt))
         }.catch { error in
             print(error)
         }

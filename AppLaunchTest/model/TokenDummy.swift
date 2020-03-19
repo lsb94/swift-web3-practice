@@ -21,14 +21,17 @@ class TokenDummy {
 
     static var dummyTokenList = [
         TokenDummy(balance: "unknown", symbol: "ZEENUS", address: "0xC84f8B669Ccb91C86AB2b38060362b9956f2De52"),
-        TokenDummy(balance: "1", symbol: "2", address: "3"),
-        TokenDummy(balance: "1", symbol: "2", address: "3"),
-        TokenDummy(balance: "1", symbol: "2", address: "3"),TokenDummy(balance: "1", symbol: "2", address: "3"),
-        TokenDummy(balance: "1", symbol: "2", address: "3"),
-        TokenDummy(balance: "1", symbol: "2", address: "3"),TokenDummy(balance: "1", symbol: "2", address: "3"),
-        TokenDummy(balance: "1", symbol: "2", address: "3"),
-        TokenDummy(balance: "1", symbol: "2", address: "3"),TokenDummy(balance: "1", symbol: "2", address: "3"),
-        TokenDummy(balance: "1", symbol: "2", address: "3"),
-        TokenDummy(balance: "1", symbol: "2", address: "3"),
-        TokenDummy(balance: "1", symbol: "2", address: "3")]
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB"),
+        TokenDummy(balance: "1", symbol: "2", address: "0x3365E9f3D0712558Be67A6eb181D09961260FCDB")]
 }

@@ -39,16 +39,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5EF7E22C-D2EC-4267-988F-71D199EEBEE3"
+            uuid = "B361620D-B088-4C35-9764-6967AA0EA089"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppLaunchTest/CustomTokenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "thisCellBalance(cell:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0006257-DA9C-4437-8E9A-432F481F8BA0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/CustomTokenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "thisCellBalance(cell:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D0006257-DA9C-4437-8E9A-432F481F8BA0 - f41c67365d34679e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppLaunchTest.CustomTokenViewController.thisCellBalance(cell: AppLaunchTest.CustomTokenCollectionViewCell) -&gt; ()"
+                  moduleName = "AppLaunchTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davelee/Desktop/xcode/swift-web3-nonDB-20039/AppLaunchTest/CustomTokenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "1028">
+               </Location>
+               <Location
+                  uuid = "D0006257-DA9C-4437-8E9A-432F481F8BA0 - a10bdaba4aa4dbe4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in AppLaunchTest.CustomTokenViewController.thisCellBalance(cell: AppLaunchTest.CustomTokenCollectionViewCell) -&gt; ()"
+                  moduleName = "AppLaunchTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davelee/Desktop/xcode/swift-web3-nonDB-20039/AppLaunchTest/CustomTokenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CAD22CD3-51D4-40A5-8010-CF33256D2E33"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/CustomTokenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "thisCellBalance(cell:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE462394-719A-44AF-A06F-A00C02BD2159"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/CustomTokenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "thisCellBalance(cell:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83661900-C85F-4313-85C0-5416C8DF861F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLaunchTest/CustomTokenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "thisCellBalance(cell:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

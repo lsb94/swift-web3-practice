@@ -81,6 +81,7 @@ class CustomTokenViewController: UIViewController {
 }
 
 extension CustomTokenViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return TokenDummy.dummyTokenList.count
     }
@@ -89,8 +90,11 @@ extension CustomTokenViewController: UICollectionViewDelegateFlowLayout, UIColle
         let cell: CustomTokenCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCellToken", for: indexPath) as! CustomTokenCollectionViewCell
         let target = TokenDummy.dummyTokenList[indexPath.row]
 
+        cell.indexPath = indexPath
+        cell.address = target.addressDummy
         cell.textTokenBalacne.text = target.balanceDummy
         cell.textTokenSymbol.text = target.symbolDummy
+        cell.delegate = self
 
         return cell
     }
@@ -98,4 +102,26 @@ extension CustomTokenViewController: UICollectionViewDelegateFlowLayout, UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.width/4)
     }
+}
+extension CustomTokenViewController: CustomTokenCollectionViewCellDelegate {
+    
+    func thisCellBalance (cell: CustomTokenCollectionViewCell) {
+        print("\(cell.address!)의 잔고를 확인한다")
+        DispatchQueue.global().async {
+            let erc20 = ContractERC20(web3: self.web3, contractAddress: TokenDummy.dummyTokenList[cell.indexPath!.row].addressDummy)
+            erc20.getBalanceOf(walletAddress: MyWallet.init().address) { result, balance in
+                if result {
+                    TokenDummy.dummyTokenList[cell.indexPath!.row].balanceDummy = balance!
+                }
+                DispatchQueue.main.async {
+                    self.collectionViewTokens.reloadItems(at: [cell.indexPath!])
+                }
+                print(balance!)
+            }
+        }
+    }
+    func thisCellTransfer(cell: CustomTokenCollectionViewCell) {
+        print("\(cell.address!)의 토큰을 전송한다")
+    }
+    
 }
