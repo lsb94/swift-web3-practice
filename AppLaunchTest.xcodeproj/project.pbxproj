@@ -13,6 +13,9 @@
 		EC10129C241793A500ED0EC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB3CC7723F38C640055BEA3 /* Main.storyboard */; };
 		EC10129D241793AB00ED0EC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7BE45523F22EFE00DEB9E8 /* LaunchScreen.storyboard */; };
 		EC45061E24205A6B00C2C808 /* MyQRGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45061D24205A6B00C2C808 /* MyQRGenerator.swift */; };
+		EC5407AE2422434E0070F432 /* CustomTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5407AC2422434E0070F432 /* CustomTokenViewController.swift */; };
+		EC5407AF2422434E0070F432 /* CustomTokenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5407AD2422434E0070F432 /* CustomTokenViewController.xib */; };
+		EC5407B32422443D0070F432 /* CustomTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5407B22422443D0070F432 /* CustomTokenView.swift */; };
 		EC7BE44823F22EFE00DEB9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BE44723F22EFE00DEB9E8 /* AppDelegate.swift */; };
 		EC7BE45223F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC7BE45023F22EFE00DEB9E8 /* AppLaunchTest.xcdatamodeld */; };
 		EC892D992410F6AB0031E7C1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892D982410F6AB0031E7C1 /* DataManager.swift */; };
@@ -59,6 +62,9 @@
 		EC10127624172DDE00ED0EC5 /* MyBioAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBioAuthentication.swift; sourceTree = "<group>"; };
 		EC10127824172E0700ED0EC5 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		EC45061D24205A6B00C2C808 /* MyQRGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRGenerator.swift; sourceTree = "<group>"; };
+		EC5407AC2422434E0070F432 /* CustomTokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTokenViewController.swift; sourceTree = "<group>"; };
+		EC5407AD2422434E0070F432 /* CustomTokenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTokenViewController.xib; sourceTree = "<group>"; };
+		EC5407B22422443D0070F432 /* CustomTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTokenView.swift; sourceTree = "<group>"; };
 		EC7BE44423F22EFE00DEB9E8 /* AppLaunchTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppLaunchTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7BE44723F22EFE00DEB9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC7BE44B23F22EFE00DEB9E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 				EC96EF27241F3BC900D1A853 /* MyWeb3.swift */,
 				EC96EF2D241F5E7E00D1A853 /* MyAlertOnTop.swift */,
 				EC45061D24205A6B00C2C808 /* MyQRGenerator.swift */,
+				EC5407AC2422434E0070F432 /* CustomTokenViewController.swift */,
+				EC5407AD2422434E0070F432 /* CustomTokenViewController.xib */,
+				EC5407B22422443D0070F432 /* CustomTokenView.swift */,
 			);
 			path = AppLaunchTest;
 			sourceTree = "<group>";
@@ -250,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC10129D241793AB00ED0EC5 /* LaunchScreen.storyboard in Resources */,
+				EC5407AF2422434E0070F432 /* CustomTokenViewController.xib in Resources */,
 				EC10129C241793A500ED0EC5 /* Main.storyboard in Resources */,
 				EC10129B2417938D00ED0EC5 /* Assets.xcassets in Resources */,
 			);
@@ -308,6 +318,7 @@
 				EC96EF30241F7A3000D1A853 /* ScannerViewController.swift in Sources */,
 				EC96EF28241F3BC900D1A853 /* MyWeb3.swift in Sources */,
 				EC45061E24205A6B00C2C808 /* MyQRGenerator.swift in Sources */,
+				EC5407AE2422434E0070F432 /* CustomTokenViewController.swift in Sources */,
 				ECFB523123FA7D5500FBEE82 /* FirstLaunch.swift in Sources */,
 				EC892D992410F6AB0031E7C1 /* DataManager.swift in Sources */,
 				EC96EF2E241F5E7E00D1A853 /* MyAlertOnTop.swift in Sources */,
@@ -320,6 +331,7 @@
 				ECB3CCC823F54F170055BEA3 /* TransferViewController.swift in Sources */,
 				ECB3CCC223F4E3DD0055BEA3 /* MyCustomTableViewCell.swift in Sources */,
 				EC96EEFC2419DC4900D1A853 /* MyPassword.swift in Sources */,
+				EC5407B32422443D0070F432 /* CustomTokenView.swift in Sources */,
 				EC96EF2C241F572A00D1A853 /* MySpinnerAlertController.swift in Sources */,
 				ECFB523323FA7FF800FBEE82 /* MyWallet.swift in Sources */,
 				ECB3CC2923F267750055BEA3 /* ContractERC20.swift in Sources */,

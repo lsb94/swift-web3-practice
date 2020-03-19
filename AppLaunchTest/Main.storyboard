@@ -400,7 +400,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="86R-so-2Hp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6Mc-Hi-7EP"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="6Mc-Hi-7EP"/>
                     <connections>
                         <segue destination="1Nn-up-oyu" kind="show" identifier="segueToTokenTableVC" id="F0t-aB-OK5"/>
                     </connections>

@@ -80,7 +80,9 @@ class FirstLaunchViewController: UIViewController {
             }//SYNC
         } else {
             //다음 뷰컨트롤러 호출
-            self.performSegue(withIdentifier: "segueToTokenTableVC", sender: nil)
+//            self.performSegue(withIdentifier: "segueToTokenTableVC", sender: nil)
+            let nextVC = CustomTokenViewController.init(nibName: "CustomTokenViewController", bundle: nil)
+            self.navigationController?.pushViewController(nextVC, animated: true)
         }
         
     }
