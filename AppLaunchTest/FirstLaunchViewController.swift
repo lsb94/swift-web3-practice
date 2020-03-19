@@ -17,6 +17,10 @@ class FirstLaunchViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         print("first?")
+        
+        //다음 뷰컨트롤러 정의
+        let nextVC = CustomTokenViewController.init(nibName: "CustomTokenViewController", bundle: nil)
+        
         let firstLaunch = FirstLaunch()
         if firstLaunch.isFirstLaunch{
 //                    if true {
@@ -62,7 +66,8 @@ class FirstLaunchViewController: UIViewController {
                             MySpinnerAlertViewController.shared.dismissSpinner()
                             
                             //다음 뷰컨트롤러 호출
-                            self.performSegue(withIdentifier: "segueToTokenTableVC", sender: nil)
+//                            self.performSegue(withIdentifier: "segueToTokenTableVC", sender: nil)
+                            self.navigationController?.pushViewController(nextVC, animated: false)
                         } catch {
                             MySpinnerAlertViewController.shared.dismissSpinner()
                             print(error)
@@ -81,12 +86,10 @@ class FirstLaunchViewController: UIViewController {
         } else {
             //다음 뷰컨트롤러 호출
 //            self.performSegue(withIdentifier: "segueToTokenTableVC", sender: nil)
-            let nextVC = CustomTokenViewController.init(nibName: "CustomTokenViewController", bundle: nil)
-            self.navigationController?.pushViewController(nextVC, animated: true)
+            self.navigationController?.pushViewController(nextVC, animated: false)
         }
         
     }
-    
     
     /*
      // MARK: - Navigation
