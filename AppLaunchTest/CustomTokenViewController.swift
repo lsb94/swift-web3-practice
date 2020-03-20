@@ -124,6 +124,7 @@ extension CustomTokenViewController: CustomTokenCollectionViewCellDelegate {
     func thisCellTransfer(cell: CustomTokenCollectionViewCell) {
         print("\(cell.address!)의 토큰을 전송한다")
         let nextVC = CustomTokenTransferViewController(nibName: "CustomTokenTransferViewController", bundle: nil)
+        nextVC.cell = cell
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

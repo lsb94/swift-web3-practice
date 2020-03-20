@@ -10,10 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomTokenTransferViewController" customModule="AppLaunchTest" customModuleProvider="target">
             <connections>
-                <outlet property="textAddress" destination="buG-NA-CSd" id="26m-Fs-dNP"/>
                 <outlet property="textAmount" destination="NHz-Rn-x3u" id="E8T-Sa-P9m"/>
                 <outlet property="textBalance" destination="TQT-PX-gMP" id="MGq-dP-UU8"/>
                 <outlet property="textSymbol" destination="sz1-6B-FTD" id="EMZ-1q-3bf"/>
+                <outlet property="textTo" destination="Vv2-me-NWy" id="kJz-r2-mQV"/>
+                <outlet property="textTokenAddress" destination="buG-NA-CSd" id="C2O-cv-eMT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -72,7 +73,7 @@
                     <rect key="frame" x="10" y="302" width="394" height="34"/>
                     <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To (wallet Address)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bd-uz-RRg">
                     <rect key="frame" x="10" y="346" width="311.5" height="24"/>
